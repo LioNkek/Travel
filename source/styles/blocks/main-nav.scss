@@ -1,0 +1,28 @@
+.main-nav__list {
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-nav__link {
+  @include button-regular;
+  text-decoration: none;
+
+  color: $color-text-on-dark;
+  transition: color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    box-shadow: inset 0 -1px 0 currentcolor;
+  }
+
+  &:focus-visible {
+    outline: 1px solid currentcolor;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    color: $color-button-accent;
+  }
+}

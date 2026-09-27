@@ -1,6 +1,39 @@
-/* здесь используйте глобальные переменные */
+/* ============ ЦВЕТА ============ */
 
-/* Начертания */
+/* Текст */
+$color-text-primary: #2d383f;
+$color-text-on-dark: #ffffff;
+$color-text-accent: #1c3374;
+
+/* Кнопки */
+$color-button-primary: #0266c1;
+$color-button-accent: #1c3374;
+$color-button-disabled: #999999;
+$color-button-text: #ffffff;
+
+/* Фон */
+$color-bg-primary: #ffffff;
+
+/* Иконки */
+$color-icon-primary: #2d383f;
+$color-icon-accent: #0266c1;
+$color-icon-on-dark: #ffffff;
+
+/* ============ ОВЕРЛЕИ ============ */
+
+$overlay-slider: linear-gradient(
+  112.1deg,
+  rgb(15 20 41 / 33%) 17.23%,
+  rgb(15 20 41 / 0%) 94.93%
+);
+
+$overlay-card: linear-gradient(
+  0deg,
+  rgb(0 0 0 / 60%) 22.3%,
+  rgb(0 0 0 / 0%) 60.32%
+);
+
+/* ============ НАЧЕРТАНИЯ ============ */
 $font-weight-light: 300;
 $font-weight-regular: 400;
 $font-weight-medium: 500;
@@ -8,7 +41,7 @@ $font-weight-semibold: 600;
 $font-weight-bold: 700;
 $font-weight-extrabold: 800;
 
-/* Брейкпоинты */
+/* ============ БРЕЙКПОИНТЫ ============ */
 $mobile-width: 320px;
 $tablet-width: 768px;
 $desktop-width: 1440px;

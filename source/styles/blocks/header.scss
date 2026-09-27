@@ -1,5 +1,81 @@
 .header {
-  padding: 10px 15px;
-  color: #ffffff;
-  background-color: #663399;
+  background-color: $color-button-primary;
+}
+
+.header__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  max-width: 1440px;
+  min-height: 100px;
+  margin: 0 auto;
+  padding: 15px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 82px;
+    padding: 20px 45px;
+  }
+
+  @media (min-width: $desktop-width) {
+    min-height: 126px;
+    padding: 32px 120px;
+  }
+}
+
+.header__burger {
+  display: flex;
+  order: 1;
+  padding: 0;
+  color: $color-text-on-dark;
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @media (min-width: $desktop-width) {
+    display: none;
+  }
+}
+
+.header__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  align-items: flex-end;
+  order: 2;
+  margin-left: auto;
+
+  @media (min-width: $tablet-width) {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @media (min-width: $desktop-width) {
+    display: contents;
+  }
+}
+
+.header__logo {
+  display: flex;
+  flex-shrink: 0;
+  order: 2;
+}
+
+.header__nav {
+  display: none;
+  order: 3;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    margin: 0 auto;
+  }
+}
+
+.header__phone {
+  @include title-h6;
+
+  order: 4;
+  text-decoration: none;
+  white-space: nowrap;
+  color: $color-text-on-dark;
 }

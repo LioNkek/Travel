@@ -11,10 +11,34 @@
 </head>
 
 <body class="page__body">
-  <header class="header">Шапка</header>
+  <header class="header">
+    <div class="header__container">
+      <button class="header__burger" type="button" aria-label="Открыть меню">
+        <!-- SVG-бургер -->
+      </button>
+
+      <div class="header__brand">
+        <a class="header__logo" href="/" aria-label="LIFETOUR — на главную">
+          <img src="images/logo.svg" width="142" height="42" alt="LIFETOUR">
+        </a>
+        <a class="header__phone" href="tel:+78000000000">8 800 000-00-00</a>
+      </div>
+
+      <nav class="header__nav main-nav" aria-label="Основная навигация">
+        <ul class="main-nav__list">
+          <li class="main-nav__item"><a class="main-nav__link" href="#tours">Туры</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#education">Обучение</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#about">О нас</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#reviews">Отзывы</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#gallery">Фотографии</a></li>
+          <li class="main-nav__item"><a class="main-nav__link" href="#contacts">Контакты</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
   <main>
-    <h1>Страница для старта</h1>
-    <img src="./icons/stack.svg#htmlacademy-logo" width="300" height="150" alt="Логотип HTML Academy">
+    <h1>Захватывающие вершины Кавказа</h1>
   </main>
 </body>
 
