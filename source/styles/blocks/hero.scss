@@ -1,0 +1,209 @@
+.hero {
+  position: relative;
+  color: $color-text-on-dark;
+  background-color: $color-text-primary;
+}
+
+.hero__slider {
+  /* Swiper */
+}
+
+.hero__wrapper {
+  /* Swiper */
+}
+
+.hero__slide {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  height: auto;
+  padding-top: 200px;
+  background-color: $color-text-primary;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+
+  &::before {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background: $overlay-slider;
+    pointer-events: none;
+  }
+}
+
+.hero__slide--first {
+  background-image:
+    image-set(
+      url("../../images/hero/hero-1@1x.webp") 1x type("image/webp"),
+      url("../../images/hero/hero-1@2x.webp") 2x type("image/webp"),
+      url("../../images/hero/hero-1@1x.jpg") 1x type("image/jpeg"),
+      url("../../images/hero/hero-1@2x.jpg") 2x type("image/jpeg")
+    );
+}
+
+.hero__slide--second {
+  background-image:
+    image-set(
+      url("../../images/hero/hero-2@1x.webp") 1x type("image/webp"),
+      url("../../images/hero/hero-2@2x.webp") 2x type("image/webp"),
+      url("../../images/hero/hero-2@1x.jpg") 1x type("image/jpeg"),
+      url("../../images/hero/hero-2@2x.jpg") 2x type("image/jpeg")
+    );
+}
+
+.hero__slide--third {
+  background-image:
+    image-set(
+      url("../../images/hero/hero-3@1x.webp") 1x type("image/webp"),
+      url("../../images/hero/hero-3@2x.webp") 2x type("image/webp"),
+      url("../../images/hero/hero-3@1x.jpg") 1x type("image/jpeg"),
+      url("../../images/hero/hero-3@2x.jpg") 2x type("image/jpeg")
+    );
+}
+
+.hero__container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+}
+
+.hero__title {
+  @include title-h1;
+  max-width: 1000px;
+  margin: 0 0 25px;
+}
+
+.hero__description {
+  @include text-big;
+  max-width: 464px;
+
+  margin: 0 0 35px;
+}
+
+.hero__button {
+  min-width: 180px;
+}
+
+.hero__badges {
+  display: flex;
+  gap: 14px;
+  margin: 0;
+  margin-top: 134px;
+  margin-bottom: 80px;
+  padding: 0;
+  list-style: none;
+}
+
+.hero__badge {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  padding: 14px 20px;
+  box-shadow: inset 0 0 0 1px $color-text-on-dark;
+}
+
+.hero__badge-icon {
+  display: block;
+  width: 12px;
+  height: 12px;
+  background-color: currentcolor;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 12px 12px;
+
+  &--moon {
+    mask-image: url("../../icons/moon.svg");
+  }
+
+  &--level {
+    mask-image: url("../../icons/level.svg");
+  }
+}
+
+.hero__badge-text {
+  @include text-xsmall;
+}
+
+.hero__cards {
+  position: absolute;
+  top: 80px;
+  right: 120px;
+  z-index: -1;
+  display: flex;
+}
+
+.hero__card {
+  display: block;
+  object-fit: contain;
+
+
+  &--first {
+    width: 308px;
+    height: 407px;
+    margin-top: -93px;
+  }
+
+  &--second {
+    width: 277px;
+    height: 366px;
+    margin-left: -175px;
+  }
+}
+
+.hero__pagination-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: 92px;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+  pointer-events: none;
+}
+
+.hero .hero__pagination {
+  --swiper-pagination-bullet-horizontal-gap: 0;
+  position: static;
+  width: auto;
+  pointer-events: auto;
+}
+
+.hero__pagination .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  background-color: transparent;
+  border: 1px solid $color-text-on-dark;
+  border-radius: 50%;
+  opacity: 100%;
+  transition: background-color 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    background-color: $color-bullet-hover;
+  }
+
+  &:active {
+    background-color: rgba($color-text-on-dark, 0.5);
+  }
+
+  &:focus-visible {
+    outline: 1px solid rgba($color-text-on-dark, 0.5);
+    outline-offset: 1px;
+  }
+}
+
+.hero__pagination .swiper-pagination-bullet-active {
+  background-color: $color-text-on-dark;
+}
+
+.hero__pagination.swiper-pagination-horizontal {
+  display: flex;
+  gap: 20px;
+}

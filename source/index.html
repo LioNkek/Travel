@@ -6,20 +6,18 @@
   <title>Название проекта</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="preload" href="fonts/montserrat-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="vendor/swiper/swiper-bundle.min.css">
   <link href="styles/styles.css" rel="stylesheet">
-  <script src="scripts/index.js" defer></script>
 </head>
 
 <body class="page__body">
   <header class="header">
     <div class="header__container">
-      <button class="header__burger" type="button" aria-label="Открыть меню">
-        <!-- SVG-бургер -->
-      </button>
+      <button class="header__burger" type="button" aria-label="Открыть меню"></button>
 
       <div class="header__brand">
         <a class="header__logo" href="/" aria-label="LIFETOUR — на главную">
-          <img src="images/logo.svg" width="142" height="42" alt="LIFETOUR">
+          <img class="header__logo-image" src="images/logo.svg" width="142" height="42" alt="LIFETOUR">
         </a>
         <a class="header__phone" href="tel:+78000000000">8 800 000-00-00</a>
       </div>
@@ -36,10 +34,83 @@
       </nav>
     </div>
   </header>
-
   <main>
-    <h1>Захватывающие вершины Кавказа</h1>
+    <section class="hero">
+      <h1 class="visually-hidden">LIFETOUR — туры в горы</h1>
+      <div class="hero__slider swiper">
+        <div class="hero__wrapper swiper-wrapper">
+
+          <!-- Слайд 1 -->
+          <div class="hero__slide hero__slide--first swiper-slide">
+            <div class="hero__container">
+              <h2 class="hero__title">Захватывающие<br>вершины Кавказа</h2>
+              <p class="hero__description">В сопровождении опытных гидов вы пройдёте через потрясающие ландшафты и совершите восход на вершину горы Чегет.</p>
+              <a class="hero__button button" href="#tours">Смотреть тур</a>
+              <ul class="hero__badges">
+                <li class="hero__badge">
+                  <span class="hero__badge-icon hero__badge-icon--moon"></span>
+                  <span class="hero__badge-text">6 дней/5 ночей</span>
+                </li>
+                <li class="hero__badge">
+                  <span class="hero__badge-icon hero__badge-icon--level"></span>
+                  <span class="hero__badge-text">Высокая сложность</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Слайд 2 -->
+          <div class="hero__slide hero__slide--second swiper-slide">
+            <div class="hero__container">
+              <h2 class="hero__title">Невероятная<br>природа Камчатки</h2>
+              <p class="hero__description">Незабываемое приключение, во время которого вы отправитесь в путешествие по одному из самых нетронутых уголков дикой природы в мире.</p>
+              <a class="hero__button button" href="#tours">Смотреть тур</a>
+              <ul class="hero__badges">
+                <li class="hero__badge">
+                  <span class="hero__badge-icon hero__badge-icon--moon"></span>
+                  <span class="hero__badge-text">9 дней/10 ночей</span>
+                </li>
+                <li class="hero__badge">
+                  <span class="hero__badge-icon hero__badge-icon--level"></span>
+                  <span class="hero__badge-text">Средняя сложность</span>
+                </li>
+              </ul>
+              <div class="hero__cards">
+                <img class="hero__card hero__card--first" src="images/hero/photo-1@1x.png" srcset="images/hero/photo-1@2x.png 2x" width="308" height="407" alt="Турист на склоне вулкана">
+                <img class="hero__card hero__card--second" src="images/hero/photo-2@1x.png" srcset="images/hero/photo-2@2x.png 2x" width="308" height="407" alt="Озеро в кратере вулкана">
+              </div>
+            </div>
+          </div>
+
+          <!-- Слайд 3 -->
+          <div class="hero__slide hero__slide--third swiper-slide">
+            <div class="hero__container">
+              <h2 class="hero__title">Магические пейзажи<br>Алтайского Края</h2>
+              <p class="hero__description">Алтайский трекинг-тур — это захватывающее приключение с посещением магических и захватывающих дух ландшафтов Алтайских гор.</p>
+              <a class="hero__button button" href="#tours">Смотреть тур</a>
+              <ul class="hero__badges">
+                <li class="hero__badge">
+                  <span class="hero__badge-icon hero__badge-icon--moon"></span>
+                  <span class="hero__badge-text">6 дней/5 ночей</span>
+                </li>
+                <li class="hero__badge">
+                  <span class="hero__badge-icon hero__badge-icon--level"></span>
+                  <span class="hero__badge-text">Высокая сложность</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="hero__pagination-wrapper">
+          <div class="hero__pagination swiper-pagination"></div>
+        </div>
+      </div>
+    </section>
   </main>
+  <script src="vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="scripts/index.js" defer></script>
 </body>
 
 </html>
