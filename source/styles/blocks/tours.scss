@@ -47,5 +47,7 @@
   display: flex;
   gap: 12px;
   justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
   color: $color-text-primary;
 }
