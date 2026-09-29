@@ -1,0 +1,34 @@
+.arrow-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 37px;
+  height: 35px;
+  padding: 0;
+  background-color: $color-button-primary;
+  border: none;
+  transition: background-color 0.3s;
+  cursor: pointer;
+
+  &::before {
+    width: 14px;
+    height: 8px;
+    content: "";
+    background-color: $color-text-on-dark;
+    mask-image: url("../../icons/big-arrow-right.svg");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 14px 8px;
+  }
+
+  &--prev::before {
+    transform: rotate(180deg);
+  }
+
+  &:disabled,
+  &--disabled {
+    background-color: $color-button-disabled;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+}

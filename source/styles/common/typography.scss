@@ -188,3 +188,34 @@
     line-height: 16px;
   }
 }
+
+@mixin title-with-shadow {
+  position: relative;
+  margin: 0;
+  color: $color-text-primary;
+
+  &::before {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    white-space: nowrap;
+
+    @include title-h2;
+
+    color: $color-text-primary;
+    content: attr(data-title);
+    opacity: 3%;
+    pointer-events: none;
+
+    @media (max-width: #{$desktop-width - 1px}) {
+      bottom: 5px;
+    }
+
+    @media (max-width: #{$tablet-width - 1px}) {
+      bottom: 12px;
+    }
+  }
+}

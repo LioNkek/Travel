@@ -2,7 +2,7 @@
   @include button-big;
 
   display: inline-flex;
-  gap: 8px;
+  gap: 12px;
   align-items: center;
   text-decoration: none;
   color: $color-text-primary;
@@ -27,4 +27,15 @@
     cursor: not-allowed;
     pointer-events: none;
   }
+}
+
+.link__icon {
+  display: block;
+  width: 9px;
+  height: 14px;
+  background-color: currentcolor;
+  mask-image: url("../../icons/arrow-right.svg");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: 9px 14px;
 }

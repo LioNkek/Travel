@@ -1,0 +1,51 @@
+.tours {
+  padding: 100px 120px;
+}
+
+.tours__container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.tours__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 54px;
+}
+
+.tours__title {
+  @include title-h3;
+  @include title-with-shadow;
+}
+
+.tours__controls {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    gap: 4px;
+  }
+}
+
+.tours__slider {
+  margin-bottom: 53px;
+}
+
+.tours__wrapper {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tours__slide {
+  width: 380px;
+  height: 416px;
+}
+
+.tours__link {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  color: $color-text-primary;
+}
