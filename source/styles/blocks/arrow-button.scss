@@ -1,72 +1,22 @@
 .arrow-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   width: 37px;
   height: 35px;
   padding: 0;
-  background-color: $color-button-primary;  /* #0266C1 */
-  border: none;
-  transition: background-color 0.3s, box-shadow 0.3s;
-  cursor: pointer;
+
+  @include arrow-button-states;
 
   &::before {
     width: 14px;
     height: 8px;
     content: "";
-    background-color: $color-icon-on-dark;  /* #FFFFFF */
     mask-image: url("../../icons/big-arrow-right.svg");
     mask-position: center;
     mask-repeat: no-repeat;
     mask-size: 14px 8px;
-    transition: background-color 0.3s, transform 0.3s;
+    transition: transform 0.2s ease;
   }
 
   &--prev::before {
     transform: rotate(180deg);
-  }
-
-  /* HOVER */
-  &:hover {
-    background-color: $color-bg-primary;   /* #FFFFFF */
-    box-shadow: inset 0 0 0 1px $color-button-accent;  /* рамка */
-
-    &::before {
-      background-color: $color-button-accent;  /* #1C3374 */
-    }
-  }
-
-  /* FOCUS */
-  &:focus-visible {
-    background-color: $color-bg-primary;
-    outline: none;
-    box-shadow: none;
-
-    &::before {
-      background-color: $color-button-accent;
-    }
-  }
-
-  /* ACTIVE */
-  &:active {
-    background-color: $color-button-accent;  /* #1C3374 */
-    box-shadow: none;
-
-    &::before {
-      background-color: $color-icon-on-dark;  /* #FFFFFF */
-    }
-  }
-
-  /* DISABLED */
-  &:disabled,
-  &--disabled {
-    background-color: $color-button-disabled;  /* #999999 */
-    box-shadow: none;
-    cursor: not-allowed;
-    pointer-events: none;
-
-    &::before {
-      background-color: $color-icon-on-dark;  /* #FFFFFF */
-    }
   }
 }

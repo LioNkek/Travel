@@ -64,6 +64,8 @@
 }
 
 .header__logo {
+  @include logo-states;
+
   display: flex;
   flex-shrink: 0;
   order: 2;
@@ -97,11 +99,10 @@
 
 .header__phone {
   @include title-h6;
+  @include phone-number-dark-states;
 
   order: 4;
-  text-decoration: none;
   white-space: nowrap;
-  color: $color-text-on-dark;
 
   @media (min-width: $tablet-width) {
     margin-left: auto;

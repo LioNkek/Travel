@@ -1,0 +1,352 @@
+/* Соцсети */
+@mixin social-icon-states {
+  background-color: transparent;
+  outline: 1px solid rgba($color-icon-primary, 0.3);
+  outline-offset: -1px;
+  transition: background-color 0.2s ease, outline-color 0.2s ease;
+  cursor: pointer;
+
+  &::before {
+    background-color: $color-text-primary;
+    transition: background-color 0.2s ease;
+  }
+
+  &:hover {
+    outline-color: $color-text-primary;
+
+    &::before {
+      background-color: $color-text-primary;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+  }
+
+  &:active {
+    background-color: $color-button-primary;
+    outline: none;
+
+    &::before {
+      background-color: $color-text-on-dark;
+    }
+  }
+
+  &:disabled,
+  &--disabled {
+    opacity: 30%;
+    pointer-events: none;
+  }
+}
+
+/* Кнопка со стрелочкой */
+@mixin arrow-button-states {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-button-primary;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease, outline-color 0.2s ease;
+  cursor: pointer;
+
+  &::before {
+    background-color: $color-text-on-dark;
+    transition: background-color 0.2s ease;
+  }
+
+  &:hover {
+    background-color: transparent;
+    outline: 1px solid $color-button-accent;
+    outline-offset: -1px;
+
+    &::before {
+      background-color: $color-button-accent;
+    }
+  }
+
+  &:focus-visible {
+    background-color: $color-bg-primary;
+    outline: none;
+
+    &::before {
+      background-color: $color-button-accent;
+    }
+  }
+
+  &:active {
+    background-color: $color-button-accent;
+    outline: none;
+
+    &::before {
+      background-color: $color-text-on-dark;
+    }
+  }
+
+  &:disabled,
+  &--disabled {
+    background-color: $color-button-disabled;
+    outline: none;
+    cursor: default;
+    pointer-events: none;
+
+    &::before {
+      background-color: $color-text-on-dark;
+    }
+  }
+}
+
+/* Текстовые кнопки */
+@mixin primary-button-states {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-text-on-dark;
+  background-color: $color-button-primary;
+  border: none;
+  outline: none;
+  transition: background-color 0.2s ease, outline-color 0.2s ease, color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-button-accent;
+    background-color: $color-bg-primary;
+    outline: 1px solid $color-button-accent;
+    outline-offset: -1px;
+  }
+
+  &:focus-visible {
+    color: $color-button-accent;
+    background-color: $color-bg-primary;
+    outline: none;
+  }
+
+  &:active {
+    color: $color-text-on-dark;
+    background-color: $color-button-accent;
+    outline: none;
+  }
+
+  &:disabled,
+  &--disabled {
+    color: $color-text-on-dark;
+    background-color: $color-button-disabled;
+    outline: none;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+/* Текстовые ссылки */
+@mixin link-states {
+  text-decoration: none;
+  color: $color-text-primary;
+  outline: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: rgba($color-button-primary, 0.2);
+  }
+
+  &:focus-visible {
+    color: $color-button-primary;
+    outline: none;
+  }
+
+  &:active {
+    color: $color-button-accent;
+  }
+
+  &:disabled,
+  &--disabled {
+    color: $color-button-disabled;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+/* Точки пагинации */
+@mixin bullet-pagination-states {
+  background-color: transparent;
+  border: 1px solid $color-text-on-dark;
+  border-radius: 50%;
+  outline: none;
+  opacity: 100%;
+  transition: background-color 0.2s ease, outline-color 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-bullet-hover;
+  }
+
+  &:active {
+    background-color: rgba($color-text-on-dark, 0.5);
+    outline: none;
+  }
+
+  &.swiper-pagination-bullet-active {
+    background-color: $color-text-on-dark;
+    border-color: $color-text-on-dark;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-text-on-dark;
+    outline-offset: 1px;
+  }
+
+  &:disabled,
+  &--disabled {
+    opacity: 30%;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+/* пункты меню */
+@mixin menu-item-base-states($main-color, $active-color) {
+  position: relative;
+  text-decoration: none;
+  color: $main-color;
+  background-color: transparent;
+  outline: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    inset: -3px -5px;
+    content: "";
+    transition: border-color 0.2s ease, outline-color 0.2s ease;
+    pointer-events: none;
+  }
+
+  &:hover {
+    color: $main-color;
+
+    &::before {
+      border-bottom: 1px solid $main-color;
+    }
+  }
+
+  &:focus-visible {
+    color: $main-color;
+
+    &::before {
+      border-bottom: none;
+      outline: 1px solid $main-color;
+    }
+  }
+
+  &:active {
+    color: $active-color;
+
+    &::before {
+      border: none;
+      outline: none;
+    }
+  }
+
+  &:disabled,
+  &--disabled {
+    color: $color-button-disabled;
+    cursor: default;
+    pointer-events: none;
+
+    &::before {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+/* пункты меню на темном фоне */
+@mixin menu-item-dark-states {
+  @include menu-item-base-states($color-text-on-dark, $color-text-accent);
+}
+
+/* пункты меню на светлом фоне  */
+@mixin menu-item-light-states {
+  @include menu-item-base-states($color-text-primary, $color-button-primary);
+}
+
+/* Телефон */
+@mixin phone-number-base-states($default-color, $hover-color, $focus-color, $active-color, $disabled-color) {
+  text-decoration: none;
+  color: $default-color;
+  background-color: transparent;
+  outline: none;
+  transition: color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: $hover-color;
+  }
+
+  &:focus-visible {
+    color: $focus-color;
+    outline: none;
+  }
+
+  &:active {
+    color: $active-color;
+  }
+
+  &:disabled,
+  &--disabled {
+    color: $disabled-color;
+    cursor: default;
+    pointer-events: none;
+  }
+}
+
+/* 1. Телефон на светлом фоне */
+@mixin phone-number-light-states {
+  @include phone-number-base-states(
+    $color-text-primary,
+    rgba($color-button-primary, 0.2),
+    $color-button-primary,
+    $color-button-accent,
+    $color-button-disabled
+  );
+}
+
+/* 2. Телефон на тёмном фоне */
+@mixin phone-number-dark-states {
+  @include phone-number-base-states(
+    $color-text-on-dark,
+    rgba($color-text-on-dark, 0.5),
+    $color-text-primary,
+    $color-button-accent,
+    $color-button-disabled
+  );
+}
+
+/* логотип */
+@mixin logo-states {
+  display: inline-flex;
+  outline: none;
+  transition: opacity 0.2s ease, outline-color 0.2s ease;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 70%;
+  }
+
+  &:focus-visible {
+    outline: 1px solid $color-text-on-dark;
+    outline-offset: 2px;
+  }
+
+  &:active {
+    opacity: 50%;
+  }
+
+  &:not([href]),
+  &--disabled {
+    outline: none;
+    opacity: 100%;
+    cursor: default;
+    pointer-events: none;
+  }
+}

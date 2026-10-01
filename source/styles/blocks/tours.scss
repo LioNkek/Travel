@@ -1,5 +1,13 @@
 .tours {
   padding: 100px 120px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    padding: 40px 45px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding: 20px 15px;
+  }
 }
 
 .tours__container {
@@ -11,7 +19,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-top: 19px;
   margin-bottom: 54px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin-top: 20px;
+    margin-bottom: 35px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-top: 16px;
+    margin-bottom: 42px;
+  }
 }
 
 .tours__title {
@@ -29,7 +48,15 @@
 }
 
 .tours__slider {
-  margin-bottom: 53px;
+  margin-bottom: 63px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin-bottom: 35px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-bottom: 35px;
+  }
 }
 
 .tours__wrapper {
@@ -39,8 +66,7 @@
 }
 
 .tours__slide {
-  width: 380px;
-  height: 416px;
+  height: auto;
 }
 
 .tours__link {
@@ -49,5 +75,14 @@
   justify-content: center;
   width: fit-content;
   margin: 0 auto;
+  margin-bottom: 110px;
   color: $color-text-primary;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-bottom: 30px;
+  }
 }

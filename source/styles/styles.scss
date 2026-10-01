@@ -3,6 +3,7 @@
 @import "./common/typography.scss";
 @import "./common/global.scss";
 @import "./common/fonts.scss";
+@import "./common/mixins";
 
 /* BLOCKS */
 @import "./blocks/button.scss";
@@ -15,3 +16,5 @@
 @import "./blocks/hero.scss";
 @import "./blocks/tours.scss";
 @import "./blocks/tour-card.scss";
+@import "./blocks/education.scss";
+@import "./blocks/instructor-card.scss";

@@ -16,7 +16,7 @@
       <button class="header__burger" type="button" aria-label="Открыть меню"></button>
 
       <div class="header__brand">
-        <a class="header__logo" href="/" aria-label="LIFETOUR — на главную">
+        <a class="header__logo" aria-label="LIFETOUR — на главную">
           <img class="header__logo-image" src="images/logo.svg" width="142" height="42" alt="LIFETOUR">
         </a>
         <nav class="header__nav main-nav" aria-label="Основная навигация">
@@ -78,7 +78,7 @@
               </ul>
               <div class="hero__cards">
                 <img class="hero__card hero__card--first" src="images/hero/photo-1@1x.png" srcset="images/hero/photo-1@2x.png 2x" width="308" height="407" alt="">
-                <img class="hero__card hero__card--second" src="images/hero/photo-2@1x.png" srcset="images/hero/photo-2@2x.png 2x" width="308" height="407" alt="">
+                <img class="hero__card hero__card--second" src="images/hero/photo-2@1x.png" srcset="images/hero/photo-2@2x.png 2x" width="277" height="366" alt="">
               </div>
             </div>
           </div>
@@ -307,6 +307,129 @@
           Показать все туры
           <span class="link__icon"></span>
         </a>
+      </div>
+    </section>
+
+    <section class="education">
+      <div class="education__container">
+
+        <!-- Заголовок секции -->
+        <h2 class="education__title" data-title="Обучение">Обучение</h2>
+
+        <!-- Описание -->
+        <p class="education__description">
+          Обучение проводится квалифицированными специалистами, за плечами которых десятки пройденных маршрутов Кавказа, Крыма, Гималаев, Эльбруса, Алтая, Карелии, Адыгеи и других.
+        </p>
+
+        <!-- Подзаголовок «Наши инструкторы» + стрелки -->
+        <div class="education__header">
+          <h3 class="education__subtitle">Наши инструкторы</h3>
+          <div class="education__controls">
+            <button class="arrow-button arrow-button--prev" type="button" aria-label="Предыдущий слайд"></button>
+            <button class="arrow-button arrow-button--next" type="button" aria-label="Следующий слайд"></button>
+          </div>
+        </div>
+
+        <!-- Слайдер инструкторов -->
+        <div class="education__slider swiper">
+          <ul class="education__wrapper swiper-wrapper">
+
+            <!-- Инструктор 1 — Александр Прокофьев -->
+            <li class="education__slide swiper-slide">
+              <article class="instructor-card">
+                <div class="instructor-card__image-wrapper">
+                  <img class="instructor-card__image" src="images/instructors/instructor-1@1x.jpg" srcset="images/instructors/instructor-1@1x.jpg 1x, images/instructors/instructor-1@2x.jpg 2x" width="672" height="554" alt="Александр Прокофьев" loading="lazy">
+                </div>
+                <div class="instructor-card__header">
+                  <h4 class="instructor-card__name">Александр Прокофьев</h4>
+                  <a class="instructor-card__vk" href="https://vk.com/" aria-label="ВКонтакте Александра Прокофьева" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+                <p class="instructor-card__description">Строгий и внимательный инструктор, весёлый и общительный человек. Любит природу.</p>
+              </article>
+            </li>
+
+            <!-- Инструктор 2 — Светлана Афиногенова -->
+            <li class="education__slide swiper-slide">
+              <article class="instructor-card">
+                <div class="instructor-card__image-wrapper">
+                  <img class="instructor-card__image" src="images/instructors/instructor-2@1x.jpg" srcset="images/instructors/instructor-2@1x.jpg 1x, images/instructors/instructor-2@2x.jpg 2x" width="672" height="552" alt="Светлана Афиногенова" loading="lazy">
+                </div>
+                <div class="instructor-card__header">
+                  <h4 class="instructor-card__name">Светлана Афиногенова</h4>
+                  <a class="instructor-card__vk" href="https://vk.com/" aria-label="ВКонтакте Светланы Афиногеновой" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+                <p class="instructor-card__description">Видеть мир вокруг, познавать его опасность, находить друг друга, становиться ближе, чувствовать — в этом назначение жизни.</p>
+              </article>
+            </li>
+
+            <!-- Инструктор 3 — Надежда Колесниченко -->
+            <li class="education__slide swiper-slide">
+              <article class="instructor-card">
+                <div class="instructor-card__image-wrapper">
+                  <img class="instructor-card__image" src="images/instructors/instructor-3@1x.jpg" srcset="images/instructors/instructor-3@1x.jpg 1x, images/instructors/instructor-3@2x.jpg 2x" width="731" height="600" alt="Надежда Колесниченко" loading="lazy">
+                </div>
+                <div class="instructor-card__header">
+                  <h4 class="instructor-card__name">Надежда Колесниченко</h4>
+                  <a class="instructor-card__vk" href="https://vk.com/" aria-label="ВКонтакте Надежды Колесниченко" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+                <p class="instructor-card__description">Участники говорят, что Надежда ответственная, приятная в общении, и в поездках с ней чувствуешь себя спокойно и уверенно.</p>
+              </article>
+            </li>
+
+            <!-- Инструктор 4 — Фёдор Кайгородов -->
+            <li class="education__slide swiper-slide">
+              <article class="instructor-card">
+                <div class="instructor-card__image-wrapper">
+                  <img class="instructor-card__image" src="images/instructors/instructor-4@1x.jpg" srcset="images/instructors/instructor-4@1x.jpg 1x, images/instructors/instructor-4@2x.jpg 2x" width="729" height="600" alt="Фёдор Кайгородов" loading="lazy">
+                </div>
+                <div class="instructor-card__header">
+                  <h4 class="instructor-card__name">Фёдор Кайгородов</h4>
+                  <a class="instructor-card__vk" href="https://vk.com/" aria-label="ВКонтакте Фёдора Кайгородова" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+                <p class="instructor-card__description">Опыт походов: Ходит в походы с 2001 года. В России побывал в горных районах Хибины, Архыз, много путешествует по Европе.</p>
+              </article>
+            </li>
+
+            <!-- Инструктор 5 — Даниэль Васнецов -->
+            <li class="education__slide swiper-slide">
+              <article class="instructor-card">
+                <div class="instructor-card__image-wrapper">
+                  <img class="instructor-card__image" src="images/instructors/instructor-5@1x.jpg" srcset="images/instructors/instructor-5@1x.jpg 1x, images/instructors/instructor-5@2x.jpg 2x" width="729" height="487" alt="Даниэль Васнецов" loading="lazy">
+                </div>
+                <div class="instructor-card__header">
+                  <h4 class="instructor-card__name">Даниэль Васнецов</h4>
+                  <a class="instructor-card__vk" href="https://vk.com/" aria-label="ВКонтакте Даниэля Васнецова" target="_blank" rel="noopener noreferrer"></a>
+                </div>
+                <p class="instructor-card__description">Покорял самые сложные вершины. Выбирался из под лавин, дружит с медведями и не только.</p>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+
+        <!-- Подзаголовок «Процесс обучения» -->
+        <h3 class="education__subtitle education__subtitle--process">Процесс обучения</h3>
+
+        <!-- 4 элемента процесса обучения -->
+        <ul class="education__process">
+          <li class="education__process-item">
+            <span class="education__process-icon education__process-icon--map"></span>
+            <p class="education__process-text">Изучение спортивного туристского движения</p>
+          </li>
+          <li class="education__process-item">
+            <span class="education__process-icon education__process-icon--boots"></span>
+            <p class="education__process-text">Подготовка и&nbsp;техническое снаряжение в&nbsp;походах</p>
+          </li>
+          <li class="education__process-item">
+            <span class="education__process-icon education__process-icon--pine-tree"></span>
+            <p class="education__process-text">Лекции по&nbsp;окружающей среде, экологии и&nbsp;гигиене</p>
+          </li>
+          <li class="education__process-item">
+            <span class="education__process-icon education__process-icon--mountain"></span>
+            <p class="education__process-text">Разъяснение сложности горных препятствий</p>
+          </li>
+        </ul>
+
       </div>
     </section>
 

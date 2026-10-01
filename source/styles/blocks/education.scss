@@ -1,0 +1,193 @@
+.education {
+  margin-bottom: 20px;
+  padding: 59px 120px 40px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    padding: 80px 45px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding: 60px 15px;
+  }
+}
+
+.education__container {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+/* Заголовок секции */
+.education__title {
+  @include title-h3;
+  @include title-with-shadow;
+
+  margin: 0 0 38px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0 0 15px;
+  }
+}
+
+/* Описание секции */
+.education__description {
+  @include text-regular;
+
+  max-width: 820px;
+  margin: 0 0 56px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    max-width: none;
+    margin: 0 0 60px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    max-width: none;
+    margin: 0 0 40px;
+  }
+}
+
+/* Подзаголовок + стрелки */
+.education__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+}
+
+.education__subtitle {
+  @include title-h3;
+
+  margin: 0;
+  color: $color-text-primary;
+}
+
+.education__subtitle--process {
+  margin: 80px 0 40px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 60px 0 30px;
+  }
+}
+
+.education__controls {
+  display: flex;
+  gap: 4px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    display: none;
+  }
+}
+
+/* Слайдер инструкторов */
+.education__slider {
+  margin-bottom: 0;
+}
+
+.education__wrapper {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.education__slide {
+  height: auto;
+}
+
+/* Процесс обучения */
+.education__process {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  /* Линия снизу с точками — растягивается на всю ширину блока */
+  &::after {
+    position: absolute;
+    right: 0;
+    bottom: -40px;
+    left: 0;
+    height: 2px;
+    content: "";
+    background-color: $color-button-primary;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    gap: 25px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* Элемент процесса — иконка СЛЕВА, текст СПРАВА */
+.education__process-item {
+  position: relative;
+  display: flex;
+  flex: 0 1 auto;
+  flex-direction: row;
+  gap: 15px;
+  align-items: flex-start;
+  max-width: 253px;
+
+  /* Точка на линии снизу */
+  &::before {
+    position: absolute;
+    bottom: -44px;
+    left: 0;
+    width: 10px;
+    height: 10px;
+    content: "";
+    background-color: $color-button-primary;
+    border-radius: 50%;
+
+    @media (max-width: ($desktop-width - 1px)) {
+      display: none;
+    }
+  }
+}
+
+.education__process-icon {
+  display: block;
+  flex-shrink: 0;            /* ← иконка не сжимается */
+  width: 40px;
+  height: 40px;
+  background-color: $color-text-primary;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+
+  &--map {
+    mask-image: url("../../icons/map.svg");
+  }
+
+  &--boots {
+    mask-image: url("../../icons/boots.svg");
+  }
+
+  &--pine-tree {
+    mask-image: url("../../icons/pine-tree.svg");
+  }
+
+  &--mountain {
+    mask-image: url("../../icons/mountain.svg");
+  }
+}
+
+.education__process-text {
+  @include text-regular;
+
+  margin: 0;
+  color: $color-text-primary;
+}

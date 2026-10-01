@@ -1,32 +1,10 @@
 .link {
   @include button-big;
+  @include link-states;
 
   display: inline-flex;
   gap: 12px;
   align-items: center;
-  text-decoration: none;
-  color: $color-text-primary;
-  transition: color 0.3s;
-  cursor: pointer;
-
-  &:hover {
-    color: rgba($color-button-primary, 0.2);
-  }
-
-  &:focus-visible {
-    color: $color-button-primary;
-    outline: none;
-  }
-
-  &:active {
-    color: $color-button-accent;
-  }
-
-  &--disabled {
-    color: $color-button-disabled;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
 }
 
 .link__icon {
