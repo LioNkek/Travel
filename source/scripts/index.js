@@ -4,7 +4,6 @@ function updateInert(swiper) {
     const isActive = slide.classList.contains('swiper-slide-active');
     if (isActive) {
       slide.removeAttribute('inert');
-      // Добавляем tabindex="-1", чтобы слайд мог принимать программный фокус
       slide.setAttribute('tabindex', '-1');
     } else {
       slide.setAttribute('inert', '');
@@ -28,19 +27,17 @@ new Swiper('.hero__slider', {
       setTimeout(() => updateInert(this), 0);
     },
     click(swiper, event) {
-      // Если клик был НЕ по кнопке/ссылке/пагинации
       const isInteractive = event.target.closest('a, button, .swiper-pagination-bullet');
 
       if (!isInteractive) {
-        const activeSlide = swiper.slides[swiper.activeIndex];
+        const activeSlide = swiper.slides.find((slide) => slide.classList.contains('swiper-slide-active'));
         if (activeSlide) {
-          activeSlide.focus({preventScroll: true}); // Переносим фокус на сам слайд
+          activeSlide.focus({preventScroll: true});
         }
       }
     },
   },
 });
-
 
 new Swiper('.tours__slider', {
   slidesPerView: 3,

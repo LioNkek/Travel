@@ -68,7 +68,7 @@
   flex-shrink: 0;
   order: 2;
 
-  @media (min-width: $tablet-width) and (max-width: #{$desktop-width - 1px}) {
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     position: absolute;
     left: 50%;
     margin-left: 0;

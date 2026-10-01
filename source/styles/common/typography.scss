@@ -210,11 +210,11 @@
     opacity: 3%;
     pointer-events: none;
 
-    @media (max-width: #{$desktop-width - 1px}) {
+    @media (max-width: ($desktop-width - 1px)) {
       bottom: 5px;
     }
 
-    @media (max-width: #{$tablet-width - 1px}) {
+    @media (max-width: ($tablet-width - 1px)) {
       bottom: 12px;
     }
   }
