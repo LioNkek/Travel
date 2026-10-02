@@ -20,7 +20,7 @@
   align-items: center;
   justify-content: space-between;
   margin-top: 19px;
-  margin-bottom: 54px;
+  margin-bottom: 53px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     margin-top: 20px;
@@ -36,6 +36,7 @@
 .tours__title {
   @include title-h3;
   @include title-with-shadow;
+  margin: 3px 0 -3px;
 }
 
 .tours__controls {
@@ -50,11 +51,7 @@
 .tours__slider {
   margin-bottom: 63px;
 
-  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    margin-bottom: 35px;
-  }
-
-  @media (max-width: ($tablet-width - 1px)) {
+  @media (max-width: ($desktop-width - 1px)) {
     margin-bottom: 35px;
   }
 }
@@ -74,8 +71,7 @@
   gap: 12px;
   justify-content: center;
   width: fit-content;
-  margin: 0 auto;
-  margin-bottom: 110px;
+  margin: 0 auto 15px;
   color: $color-text-primary;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {

@@ -5,6 +5,12 @@
   display: inline-flex;
   gap: 12px;
   align-items: center;
+
+  &:hover .link__icon,
+  &:focus-visible .link__icon,
+  &:active .link__icon {
+    background-color: currentcolor;
+  }
 }
 
 .link__icon {
@@ -16,4 +22,5 @@
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: 9px 14px;
+  transition: background-color 0.2s ease;
 }

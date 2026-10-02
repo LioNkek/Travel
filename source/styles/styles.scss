@@ -3,12 +3,11 @@
 @import "./common/typography.scss";
 @import "./common/global.scss";
 @import "./common/fonts.scss";
-@import "./common/mixins";
+@import "./common/mixins.scss";
 
 /* BLOCKS */
 @import "./blocks/button.scss";
 @import "./blocks/link.scss";
-@import "./blocks/icon-button.scss";
 @import "./blocks/arrow-button.scss";
 @import "./blocks/header.scss";
 @import "./blocks/main-nav.scss";

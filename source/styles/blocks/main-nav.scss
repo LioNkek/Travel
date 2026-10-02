@@ -9,5 +9,5 @@
 
 .main-nav__link {
   @include button-regular;
-  @include menu-item-dark-states;
+  @include menu-item-states;
 }

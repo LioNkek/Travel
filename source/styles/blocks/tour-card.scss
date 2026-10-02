@@ -73,13 +73,13 @@
   &--location {
     margin-right: auto;
     padding: 6px 12px;
-    background-color: $color-button-primary;
+    background-color: $color-blue;
   }
 }
 
 .tour-card__badge-icon {
   display: block;
-  background-color: $color-icon-on-dark;
+  background-color: $color-white;
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: contain;
@@ -93,13 +93,18 @@
   &--sun {
     width: 20px;
     height: 20px;
+    margin-right: 7px;
     mask-image: url("../../icons/sun.svg");
   }
 
   &--moon {
-    width: 16px;
-    height: 16px;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
     mask-image: url("../../icons/moon.svg");
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 16px 16px;
   }
 }
 
@@ -113,7 +118,7 @@
   width: 80px;
   height: 1px;
   margin: 0 0 15px;
-  background-color: rgba($color-icon-on-dark, 0.2);
+  background-color: rgba($color-white, 0.2);
 }
 
 .tour-card__details {
@@ -133,6 +138,8 @@
 }
 
 .tour-card__detail-value {
+  margin-top: auto;
+
   @include caption-big;
 }
 
@@ -145,7 +152,7 @@
   display: block;
   width: 16px;
   height: 16px;
-  background-color: $color-icon-on-dark;
+  background-color: $color-white;
   mask-image: url("../../icons/star.svg");
   mask-position: center;
   mask-repeat: no-repeat;

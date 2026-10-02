@@ -4,14 +4,6 @@
   background-color: $color-text-primary;
 }
 
-.hero__slider {
-  /* Swiper */
-}
-
-.hero__wrapper {
-  /* Swiper */
-}
-
 .hero__slide {
   position: relative;
   display: flex;
@@ -19,7 +11,7 @@
   height: auto;
   background-color: $color-text-primary;
   background-repeat: no-repeat;
-  background-position: center 30%;
+  background-position: center 50%;
   background-size: cover;
   outline: none;
 
@@ -91,7 +83,6 @@
   margin: 0 auto;
   padding: 200px 120px 0;
 
-
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     position: static;
     padding: 100px 45px;
@@ -110,8 +101,9 @@
 
 .hero__title {
   @include title-h1;
+
   max-width: 1000px;
-  margin: 0 0 25px;
+  margin: 0 0 23px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     max-width: none;
@@ -119,17 +111,17 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
+    @include title-h2;
+
     max-width: none;
     margin: 0 0 15px;
-
-    @include title-h2;
   }
 }
 
 .hero__description {
   @include text-big;
-  max-width: 464px;
 
+  max-width: 464px;
   margin: 0 0 35px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
@@ -144,7 +136,6 @@
 }
 
 .hero__button {
-
   min-width: 180px;
   margin-bottom: 134px;
 
@@ -159,17 +150,12 @@
 
 .hero__badges {
   display: flex;
-  gap: 14px;
-  margin: 0;
-  margin-bottom: 80px;
+  gap: 10px;
+  margin: 0 0 80px;
   padding: 0;
   list-style: none;
 
-  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    display: none;
-  }
-
-  @media (max-width: ($tablet-width - 1px)) {
+  @media (max-width: ($desktop-width - 1px)) {
     display: none;
   }
 }
@@ -268,13 +254,7 @@
   padding: 0 120px;
   pointer-events: none;
 
-  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    bottom: 40px;
-    justify-content: center;
-    padding: 0;
-  }
-
-  @media (max-width: ($tablet-width - 1px)) {
+  @media (max-width: ($desktop-width - 1px)) {
     bottom: 40px;
     justify-content: center;
     padding: 0;
@@ -283,6 +263,7 @@
 
 .hero .hero__pagination {
   --swiper-pagination-bullet-horizontal-gap: 0;
+
   position: static;
   width: auto;
   pointer-events: auto;
@@ -290,16 +271,12 @@
 
 .hero__pagination {
   & .swiper-pagination-bullet {
+    @include bullet-pagination-states;
+
     width: 20px;
     height: 20px;
     margin: 0;
-
-    @include bullet-pagination-states;
   }
-}
-
-.hero__pagination .swiper-pagination-bullet-active {
-  background-color: $color-text-on-dark;
 }
 
 .hero__pagination.swiper-pagination-horizontal {

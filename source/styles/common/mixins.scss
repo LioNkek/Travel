@@ -1,213 +1,264 @@
-/* Соцсети */
-@mixin social-icon-states {
-  background-color: transparent;
-  outline: 1px solid rgba($color-icon-primary, 0.3);
-  outline-offset: -1px;
-  transition: background-color 0.2s ease, outline-color 0.2s ease;
+/* ========== МИКСИНЫ СОСТОЯНИЙ ИНТЕРАКТИВНЫХ ЭЛЕМЕНТОВ ========== */
+
+/* Кнопки */
+@mixin button-primary-states {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: $color-btn-primary-text-default;
+  background-color: $color-btn-primary-bg-default;
+  border: 1px solid $color-btn-primary-border-default;
+  outline: none;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
   cursor: pointer;
 
+  & svg,
   &::before {
-    background-color: $color-text-primary;
-    transition: background-color 0.2s ease;
+    background-color: $color-btn-primary-icon-default;
+    transition: fill 0.2s ease, background-color 0.2s ease;
+    fill: $color-btn-primary-icon-default;
   }
 
   &:hover {
-    outline-color: $color-text-primary;
+    color: $color-btn-primary-text-hover;
+    background-color: $color-btn-primary-bg-hover;
+    border-color: $color-btn-primary-border-hover;
 
+    & svg,
     &::before {
-      background-color: $color-text-primary;
+      background-color: $color-btn-primary-icon-hover;
+      fill: $color-btn-primary-icon-hover;
     }
   }
 
   &:focus-visible {
-    outline: none;
+    color: $color-btn-primary-text-focus;
+    background-color: $color-btn-primary-bg-focus;
+    border-color: $color-btn-primary-border-focus;
+
+    & svg,
+    &::before {
+      background-color: $color-btn-primary-icon-focus;
+      fill: $color-btn-primary-icon-focus;
+    }
   }
 
   &:active {
-    background-color: $color-button-primary;
-    outline: none;
+    color: $color-btn-primary-text-active;
+    background-color: $color-btn-primary-bg-active;
+    border-color: $color-btn-primary-border-active;
 
+    & svg,
     &::before {
-      background-color: $color-text-on-dark;
+      background-color: $color-btn-primary-icon-active;
+      fill: $color-btn-primary-icon-active;
     }
   }
 
   &:disabled,
   &--disabled {
-    opacity: 30%;
+    color: $color-btn-primary-text-disabled;
+    background-color: $color-btn-primary-bg-disabled;
+    border-color: $color-btn-primary-border-disabled;
+    cursor: default;
     pointer-events: none;
+
+    & svg,
+    &::before {
+      background-color: $color-btn-primary-icon-disabled;
+      fill: $color-btn-primary-icon-disabled;
+    }
   }
 }
 
-/* Кнопка со стрелочкой */
+/* Кнопки-стрелки (слайдеры и навигация) */
 @mixin arrow-button-states {
-  display: flex;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: $color-button-primary;
-  border: none;
+  background-color: $color-blue;
+  border: 1px solid transparent;
   outline: none;
-  transition: background-color 0.2s ease, outline-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
 
   &::before {
-    background-color: $color-text-on-dark;
+    background-color: $color-white;
     transition: background-color 0.2s ease;
   }
 
   &:hover {
     background-color: transparent;
-    outline: 1px solid $color-button-accent;
-    outline-offset: -1px;
+    border-color: $color-dark-blue;
 
     &::before {
-      background-color: $color-button-accent;
+      background-color: $color-dark-blue;
     }
   }
 
   &:focus-visible {
-    background-color: $color-bg-primary;
-    outline: none;
+    background-color: transparent;
+    border-color: transparent;
 
     &::before {
-      background-color: $color-button-accent;
+      background-color: $color-dark-blue;
     }
   }
 
   &:active {
-    background-color: $color-button-accent;
-    outline: none;
+    background-color: $color-dark-blue;
+    border-color: transparent;
 
     &::before {
-      background-color: $color-text-on-dark;
+      background-color: $color-white;
     }
   }
 
   &:disabled,
+  &.swiper-button-disabled,
   &--disabled {
-    background-color: $color-button-disabled;
-    outline: none;
+    background-color: $color-gray-disabled;
+    border-color: transparent;
     cursor: default;
     pointer-events: none;
 
     &::before {
-      background-color: $color-text-on-dark;
+      background-color: $color-white;
     }
   }
 }
 
-/* Текстовые кнопки */
-@mixin primary-button-states {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: $color-text-on-dark;
-  background-color: $color-button-primary;
-  border: none;
-  outline: none;
-  transition: background-color 0.2s ease, outline-color 0.2s ease, color 0.2s ease;
-  cursor: pointer;
-
-  &:hover {
-    color: $color-button-accent;
-    background-color: $color-bg-primary;
-    outline: 1px solid $color-button-accent;
-    outline-offset: -1px;
-  }
-
-  &:focus-visible {
-    color: $color-button-accent;
-    background-color: $color-bg-primary;
-    outline: none;
-  }
-
-  &:active {
-    color: $color-text-on-dark;
-    background-color: $color-button-accent;
-    outline: none;
-  }
-
-  &:disabled,
-  &--disabled {
-    color: $color-text-on-dark;
-    background-color: $color-button-disabled;
-    outline: none;
-    cursor: default;
-    pointer-events: none;
-  }
-}
-
-/* Текстовые ссылки */
+/* Ссылки */
 @mixin link-states {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
   text-decoration: none;
-  color: $color-text-primary;
+  color: $color-link-text-default;
   outline: none;
   transition: color 0.2s ease;
   cursor: pointer;
 
+  & svg {
+    transition: fill 0.2s ease;
+    fill: currentcolor;
+  }
+
   &:hover {
-    color: rgba($color-button-primary, 0.2);
+    color: $color-link-text-hover;
   }
 
   &:focus-visible {
-    color: $color-button-primary;
-    outline: none;
+    color: $color-link-text-focus;
   }
 
   &:active {
-    color: $color-button-accent;
+    color: $color-link-text-active;
   }
 
   &:disabled,
   &--disabled {
-    color: $color-button-disabled;
+    color: $color-link-text-disabled;
     cursor: default;
     pointer-events: none;
   }
+
+  /* Ссылки на темном фоне */
+  &--on-dark {
+    color: $color-link-on-dark-text-default;
+
+    &:hover {
+      color: $color-link-on-dark-text-hover;
+    }
+
+    &:focus-visible {
+      color: $color-link-on-dark-text-focus;
+    }
+
+    &:active {
+      color: $color-link-on-dark-text-active;
+    }
+
+    &:disabled,
+    &--disabled {
+      color: $color-link-on-dark-text-disabled;
+    }
+  }
 }
 
-/* Точки пагинации */
-@mixin bullet-pagination-states {
-  background-color: transparent;
-  border: 1px solid $color-text-on-dark;
-  border-radius: 50%;
+
+/* Иконки/Соцсети */
+@mixin icon-social-states {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $color-icon-bg-default;
+  border: 1px solid $color-icon-border-default;
   outline: none;
-  opacity: 100%;
-  transition: background-color 0.2s ease, outline-color 0.2s ease, border-color 0.2s ease;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
 
+  & svg,
+  &::before {
+    background-color: $color-icon-symbol-default;
+    transition: fill 0.2s ease, background-color 0.2s ease;
+    fill: $color-icon-symbol-default;
+  }
+
   &:hover {
-    background-color: $color-bullet-hover;
-  }
+    background-color: $color-icon-bg-hover;
+    border-color: $color-icon-border-hover;
 
-  &:active {
-    background-color: rgba($color-text-on-dark, 0.5);
-    outline: none;
-  }
-
-  &.swiper-pagination-bullet-active {
-    background-color: $color-text-on-dark;
-    border-color: $color-text-on-dark;
+    & svg,
+    &::before {
+      background-color: $color-icon-symbol-hover;
+      fill: $color-icon-symbol-hover;
+    }
   }
 
   &:focus-visible {
-    outline: 1px solid $color-text-on-dark;
-    outline-offset: 1px;
+    background-color: $color-icon-bg-focus;
+    border-color: $color-icon-border-focus;
+
+    & svg,
+    &::before {
+      background-color: $color-icon-symbol-focus;
+      fill: $color-icon-symbol-focus;
+    }
+  }
+
+  &:active {
+    background-color: $color-icon-bg-active;
+    border-color: $color-icon-border-active;
+
+    & svg,
+    &::before {
+      background-color: $color-icon-symbol-active;
+      fill: $color-icon-symbol-active;
+    }
   }
 
   &:disabled,
   &--disabled {
-    opacity: 30%;
+    background-color: $color-icon-bg-disabled;
+    border-color: $color-icon-border-disabled;
     cursor: default;
     pointer-events: none;
+
+    & svg,
+    &::before {
+      background-color: $color-icon-symbol-disabled;
+      fill: $color-icon-symbol-disabled;
+    }
   }
 }
 
-/* пункты меню */
-@mixin menu-item-base-states($main-color, $active-color) {
+
+/* Пункты меню */
+@mixin menu-item-states {
   position: relative;
   text-decoration: none;
-  color: $main-color;
+  color: $color-menu-item-text-default;
   background-color: transparent;
   outline: none;
   transition: color 0.2s ease;
@@ -215,118 +266,135 @@
 
   &::before {
     position: absolute;
-    inset: -3px -5px;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    height: 1px;
     content: "";
-    transition: border-color 0.2s ease, outline-color 0.2s ease;
+    background-color: currentcolor;
+    opacity: 0%;
+    transition: opacity 0.2s ease;
     pointer-events: none;
   }
 
   &:hover {
-    color: $main-color;
+    color: $color-menu-item-text-hover;
 
     &::before {
-      border-bottom: 1px solid $main-color;
+      opacity: 100%;
     }
   }
 
   &:focus-visible {
-    color: $main-color;
+    color: $color-menu-item-text-focus;
+    outline: 1px solid currentcolor;
+    outline-offset: 4px;
 
     &::before {
-      border-bottom: none;
-      outline: 1px solid $main-color;
+      opacity: 0%;
     }
   }
 
   &:active {
-    color: $active-color;
+    color: $color-menu-item-text-active;
 
     &::before {
-      border: none;
-      outline: none;
+      opacity: 0%;
     }
   }
 
   &:disabled,
   &--disabled {
-    color: $color-button-disabled;
+    color: $color-menu-item-text-disabled;
     cursor: default;
     pointer-events: none;
 
     &::before {
-      border: none;
-      outline: none;
+      opacity: 0%;
+    }
+  }
+
+  /* Меню на тёмном */
+  &--on-dark {
+    color: $color-menu-item-on-dark-text-default;
+
+    &:hover {
+      color: $color-menu-item-on-dark-text-hover;
+    }
+
+    &:focus-visible {
+      color: $color-menu-item-on-dark-text-focus;
+    }
+
+    &:active {
+      color: $color-menu-item-on-dark-text-active;
+    }
+
+    &:disabled,
+    &--disabled {
+      color: $color-menu-item-on-dark-text-disabled;
     }
   }
 }
 
-/* пункты меню на темном фоне */
-@mixin menu-item-dark-states {
-  @include menu-item-base-states($color-text-on-dark, $color-text-accent);
-}
 
-/* пункты меню на светлом фоне  */
-@mixin menu-item-light-states {
-  @include menu-item-base-states($color-text-primary, $color-button-primary);
-}
-
-/* Телефон */
-@mixin phone-number-base-states($default-color, $hover-color, $focus-color, $active-color, $disabled-color) {
-  text-decoration: none;
-  color: $default-color;
-  background-color: transparent;
+/* Булиты */
+@mixin bullet-pagination-states {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  background-color: $color-bullet-bg-default;
+  border: 1px solid $color-bullet-border-default;
+  border-radius: 50%;
   outline: none;
-  transition: color 0.2s ease;
+  opacity: 100%;
+  transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   cursor: pointer;
 
-  &:hover {
-    color: $hover-color;
+  &.swiper-pagination-bullet-active,
+  &--selected {
+    background-color: $color-bullet-bg-selected;
+    border-color: transparent;
   }
 
-  &:focus-visible {
-    color: $focus-color;
-    outline: none;
+  &:hover {
+    background-color: $color-bullet-bg-hover;
+    border-color: $color-bullet-border-default;
   }
 
   &:active {
-    color: $active-color;
+    background-color: $color-bullet-bg-active;
+    border-color: $color-bullet-border-default;
+  }
+
+  &:focus-visible {
+    background-color: $color-bullet-bg-focus;
+    border-color: $color-bullet-border-focus;
+    outline: 1px solid $color-bullet-ring-focus;
+    outline-offset: 1px;
+
+    &.swiper-pagination-bullet-active,
+    &--selected {
+      background-color: $color-bullet-bg-selected;
+      border-color: transparent;
+    }
   }
 
   &:disabled,
   &--disabled {
-    color: $disabled-color;
+    background-color: $color-bullet-bg-hover;
+    border-color: transparent;
     cursor: default;
     pointer-events: none;
   }
 }
 
-/* 1. Телефон на светлом фоне */
-@mixin phone-number-light-states {
-  @include phone-number-base-states(
-    $color-text-primary,
-    rgba($color-button-primary, 0.2),
-    $color-button-primary,
-    $color-button-accent,
-    $color-button-disabled
-  );
-}
 
-/* 2. Телефон на тёмном фоне */
-@mixin phone-number-dark-states {
-  @include phone-number-base-states(
-    $color-text-on-dark,
-    rgba($color-text-on-dark, 0.5),
-    $color-text-primary,
-    $color-button-accent,
-    $color-button-disabled
-  );
-}
-
-/* логотип */
+/* Логотип */
 @mixin logo-states {
   display: inline-flex;
   outline: none;
-  transition: opacity 0.2s ease, outline-color 0.2s ease;
+  transition: opacity 0.2s ease;
   cursor: pointer;
 
   &:hover {
@@ -334,7 +402,7 @@
   }
 
   &:focus-visible {
-    outline: 1px solid $color-text-on-dark;
+    outline: 1px solid $color-white;
     outline-offset: 2px;
   }
 

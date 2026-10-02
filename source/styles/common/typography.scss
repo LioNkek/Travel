@@ -91,6 +91,12 @@
   }
 }
 
+@mixin title-h7 {
+  font-size: 14px;
+  font-weight: $font-weight-bold;
+  line-height: 16px;
+}
+
 /* ============ TEXT ============ */
 
 @mixin text-big {

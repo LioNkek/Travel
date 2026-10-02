@@ -1,6 +1,6 @@
 .button {
   @include button-regular;
-  @include primary-button-states;
+  @include button-primary-states;
 
   padding: 20px;
   font-family: inherit;

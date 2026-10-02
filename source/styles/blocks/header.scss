@@ -1,5 +1,5 @@
 .header {
-  background-color: $color-button-primary;
+  background-color: $color-blue;
 }
 
 .header__container {
@@ -31,7 +31,7 @@
   width: 26px;
   height: 26px;
   padding: 0;
-  background-color: $color-text-on-dark; /* #FFFFFF */
+  background-color: $color-white;
   border: none;
   mask-image: url("../../icons/burger.svg");
   mask-position: center;
@@ -99,12 +99,8 @@
 
 .header__phone {
   @include title-h6;
-  @include phone-number-dark-states;
+  @include link-states;
 
   order: 4;
   white-space: nowrap;
-
-  @media (min-width: $tablet-width) {
-    margin-left: auto;
-  }
 }

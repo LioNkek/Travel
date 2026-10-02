@@ -5,8 +5,8 @@
   gap: 15px;
   height: 100%;
   padding: 15px;
-  background-color: $color-bg-primary;
-  outline: 1px solid rgba($color-icon-accent, 0.2);
+  background-color: $color-white;
+  outline: 1px solid rgba($color-blue, 0.2);
   outline-offset: -1px;
 }
 
@@ -23,7 +23,6 @@
   height: 100%;
 }
 
-/* Имя + VK в одной строке */
 .instructor-card__header {
   display: flex;
   gap: 10px;
@@ -32,13 +31,14 @@
 }
 
 .instructor-card__name {
-  @include title-h5;
-
+  @include title-h7;
+  display: block;
+  max-width: min-content;
   margin: 0;
+  word-break: normal;
   color: $color-text-primary;
 }
 
-/* Иконка VK — в рамке, справа от имени */
 .instructor-card__vk {
   display: flex;
   flex-shrink: 0;
@@ -47,7 +47,7 @@
   width: 24px;
   height: 24px;
 
-  @include social-icon-states;
+  @include icon-social-states;
 
   &::before {
     width: 16px;
@@ -61,7 +61,7 @@
 }
 
 .instructor-card__description {
-  @include text-small;
+  @include text-xsmall;
 
   margin: 0;
   color: $color-text-primary;

@@ -1,25 +1,129 @@
 /* ============ ЦВЕТА ============ */
 
-/* Текст */
-$color-text-primary: #2d383f;
-$color-text-on-dark: #ffffff;
-$color-text-accent: #1c3374;
+/* ============ БАЗОВАЯ ПАЛИТРА ============ */
+$color-blue: #0266c1;
+$color-dark-blue: #1c3374;
+$color-dark-gray: #2d383f;
+$color-white: #ffffff;
+$color-gray-disabled: #999999;
+$color-gray-light: #d9d9d9;
 
-/* Кнопки */
-$color-button-primary: #0266c1;
-$color-button-accent: #1c3374;
-$color-button-disabled: #999999;
-$color-button-text: #ffffff;
+/* ============ СЕМАНТИЧЕСКИЕ ============ */
+
+/* 1. Обычный текст */
+$color-text-primary: $color-dark-gray;
+$color-text-on-dark: $color-white;
+$color-text-disabled: $color-gray-disabled;
+
+/* ---Кнопки--- */
+
+/* Фон кнопки */
+$color-btn-primary-bg-default: $color-blue;
+$color-btn-primary-bg-hover: $color-white;
+$color-btn-primary-bg-focus: $color-white;
+$color-btn-primary-bg-active: $color-dark-blue;
+$color-btn-primary-bg-disabled: $color-gray-disabled;
+
+/* Текст внутри кнопки */
+$color-btn-primary-text-default: $color-white;
+$color-btn-primary-text-hover: $color-dark-blue;
+$color-btn-primary-text-focus: $color-dark-blue;
+$color-btn-primary-text-active: $color-white;
+$color-btn-primary-text-disabled: $color-white;
+
+/* Иконка внутри кнопки */
+$color-btn-primary-icon-default: $color-white;
+$color-btn-primary-icon-hover: $color-dark-blue;
+$color-btn-primary-icon-focus: $color-dark-blue;
+$color-btn-primary-icon-active: $color-white;
+$color-btn-primary-icon-disabled: $color-white;
+
+/* Рамка кнопки */
+$color-btn-primary-border-default: transparent;
+$color-btn-primary-border-hover: $color-dark-blue;
+$color-btn-primary-border-focus: transparent;
+$color-btn-primary-border-active: transparent;
+$color-btn-primary-border-disabled: transparent;
+
+/* ---Ссылки--- */
+
+/* Текст ссылки */
+$color-link-text-default: $color-dark-gray;
+$color-link-text-hover: rgba($color-blue, 0.2);
+$color-link-text-focus: $color-blue;
+$color-link-text-active: $color-dark-blue;
+$color-link-text-disabled: $color-gray-disabled;
+
+/* Иконка/Стрелочка ссылки */
+$color-link-icon-default: $color-dark-gray;
+$color-link-icon-hover: rgba($color-blue, 0.2);
+$color-link-icon-focus: $color-blue;
+$color-link-icon-active: $color-dark-blue;
+$color-link-icon-disabled: $color-gray-disabled;
+
+/* Текст ссылки на темном фоне */
+$color-link-on-dark-text-default: $color-white;
+$color-link-on-dark-text-hover: rgba($color-white, 0.5);
+$color-link-on-dark-text-focus: $color-dark-gray;
+$color-link-on-dark-text-active: $color-dark-blue;
+$color-link-on-dark-text-disabled: $color-gray-disabled;
+
+/* ---Иконки/Соцсети--- */
 
 /* Фон */
-$color-bg-primary: #ffffff;
+$color-icon-bg-default: transparent;
+$color-icon-bg-hover: transparent;
+$color-icon-bg-focus: transparent;
+$color-icon-bg-active: $color-blue;
+$color-icon-bg-disabled: transparent;
 
-/* Иконки */
-$color-icon-primary: #2d383f;
-$color-icon-accent: #0266c1;
-$color-icon-on-dark: #ffffff;
+/* СВГ иконка */
+$color-icon-symbol-default: $color-dark-gray;
+$color-icon-symbol-hover: $color-dark-gray;
+$color-icon-symbol-focus: $color-dark-gray;
+$color-icon-symbol-active: $color-white;
+$color-icon-symbol-disabled: rgba($color-dark-gray, 0.3);
 
-$color-bullet-hover: #d9d9d9;
+/* Рамка */
+$color-icon-border-default: rgba($color-dark-gray, 0.3);
+$color-icon-border-hover: $color-dark-gray;
+$color-icon-border-focus: transparent;
+$color-icon-border-active: transparent;
+$color-icon-border-disabled: rgba($color-dark-gray, 0.3);
+
+/* ---Пункты меню--- */
+
+/* На светлом фоне */
+$color-menu-item-text-default: $color-dark-gray;
+$color-menu-item-text-hover: $color-dark-gray;
+$color-menu-item-text-focus: $color-dark-gray;
+$color-menu-item-text-active: $color-blue;
+$color-menu-item-text-disabled: $color-gray-disabled;
+
+/* На тёмном фоне */
+$color-menu-item-on-dark-text-default: $color-white;
+$color-menu-item-on-dark-text-hover: $color-white;
+$color-menu-item-on-dark-text-focus: $color-white;
+$color-menu-item-on-dark-text-active: $color-dark-blue;
+$color-menu-item-on-dark-text-disabled: $color-gray-disabled;
+
+/* ---Пагинация--- */
+
+/* Фон буллита */
+$color-bullet-bg-selected: $color-white;
+$color-bullet-bg-default: transparent;
+$color-bullet-bg-hover: $color-gray-light;
+$color-bullet-bg-active: rgba($color-white, 0.5);
+$color-bullet-bg-focus: transparent;
+
+/* Рамка и внешнее кольцо фокуса */
+$color-bullet-border-default: $color-white;
+$color-bullet-border-focus: $color-white;
+$color-bullet-ring-focus: rgba($color-white, 0.5);
+
+/* Фон */
+$color-bg-primary: $color-white;
+
 /* ============ ОВЕРЛЕИ ============ */
 
 $overlay-slider: linear-gradient(

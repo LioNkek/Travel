@@ -1,5 +1,4 @@
 .education {
-  margin-bottom: 20px;
   padding: 59px 120px 40px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
@@ -16,19 +15,17 @@
   margin: 0 auto;
 }
 
-/* Заголовок секции */
 .education__title {
   @include title-h3;
   @include title-with-shadow;
 
-  margin: 0 0 38px;
+  margin: 0 0 32px;
 
   @media (max-width: ($tablet-width - 1px)) {
     margin: 0 0 15px;
   }
 }
 
-/* Описание секции */
 .education__description {
   @include text-regular;
 
@@ -46,12 +43,11 @@
   }
 }
 
-/* Подзаголовок + стрелки */
 .education__header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin-bottom: 21px;
 
   @media (max-width: ($tablet-width - 1px)) {
     flex-direction: column;
@@ -63,12 +59,13 @@
 .education__subtitle {
   @include title-h3;
 
-  margin: 0;
+  margin: 0 0 -12px;
   color: $color-text-primary;
 }
 
 .education__subtitle--process {
-  margin: 80px 0 40px;
+  @include title-h5;
+  margin: 58px 0 29px;
 
   @media (max-width: ($tablet-width - 1px)) {
     margin: 60px 0 30px;
@@ -84,7 +81,6 @@
   }
 }
 
-/* Слайдер инструкторов */
 .education__slider {
   margin-bottom: 0;
 }
@@ -99,26 +95,23 @@
   height: auto;
 }
 
-/* Процесс обучения */
 .education__process {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
   justify-content: flex-start;
   margin: 0;
   padding: 0;
   list-style: none;
 
-  /* Линия снизу с точками — растягивается на всю ширину блока */
   &::after {
     position: absolute;
     right: 0;
-    bottom: -40px;
-    left: 0;
+    bottom: -10px;
+    left: 20px;
     height: 2px;
     content: "";
-    background-color: $color-button-primary;
+    background-color: $color-blue;
   }
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
@@ -131,25 +124,22 @@
   }
 }
 
-/* Элемент процесса — иконка СЛЕВА, текст СПРАВА */
 .education__process-item {
   position: relative;
   display: flex;
   flex: 0 1 auto;
   flex-direction: row;
-  gap: 15px;
   align-items: flex-start;
   max-width: 253px;
 
-  /* Точка на линии снизу */
   &::before {
     position: absolute;
-    bottom: -44px;
-    left: 0;
-    width: 10px;
-    height: 10px;
+    bottom: -15px;
+    left: 20px;
+    width: 14px;
+    height: 14px;
     content: "";
-    background-color: $color-button-primary;
+    background-color: $color-blue;
     border-radius: 50%;
 
     @media (max-width: ($desktop-width - 1px)) {
@@ -160,9 +150,10 @@
 
 .education__process-icon {
   display: block;
-  flex-shrink: 0;            /* ← иконка не сжимается */
-  width: 40px;
-  height: 40px;
+  flex-shrink: 0;
+  width: 25px;
+  height: 25px;
+  margin: 0 10px;
   background-color: $color-text-primary;
   mask-position: center;
   mask-repeat: no-repeat;
@@ -188,6 +179,6 @@
 .education__process-text {
   @include text-regular;
 
-  margin: 0;
+  margin: -2px 0 0;
   color: $color-text-primary;
 }
