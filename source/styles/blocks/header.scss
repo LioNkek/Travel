@@ -9,24 +9,23 @@
   gap: 10px;
   align-items: center;
   max-width: 1440px;
-  min-height: 100px;
+  min-height: 126px;
   margin: 0 auto;
-  padding: 15px;
+  padding: 32px 120px;
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     min-height: 82px;
     padding: 20px 45px;
   }
 
-  @media (min-width: $desktop-width) {
-    flex-wrap: nowrap;
-    min-height: 126px;
-    padding: 32px 120px;
+  @media (max-width: ($tablet-width - 1px)) {
+    min-height: 100px;
+    padding: 15px;
   }
 }
 
 .header__burger {
-  display: block;
+  display: none;
   order: 1;
   width: 26px;
   height: 26px;
@@ -39,27 +38,25 @@
   mask-size: 26px 26px;
   cursor: pointer;
 
-  @media (min-width: $desktop-width) {
-    display: none;
+  @media (max-width: ($desktop-width - 1px)) {
+    display: block;
   }
 }
 
 .header__brand {
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  align-items: flex-end;
+  display: contents;
   order: 2;
   margin-left: auto;
 
-  @media (min-width: $tablet-width) {
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     display: contents;
-    flex-direction: row;
-    align-items: center;
   }
 
-  @media (min-width: $desktop-width) {
-    display: contents;
+  @media (max-width: ($tablet-width - 1px)) {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    align-items: flex-end;
   }
 }
 
@@ -69,16 +66,17 @@
   display: flex;
   flex-shrink: 0;
   order: 2;
+  margin: 10px 31px 10px 32px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     position: absolute;
     left: 50%;
-    margin-left: 0;
+    margin: 0;
     transform: translateX(-50%);
   }
 
-  @media (min-width: $desktop-width) {
-    margin: 10px 31px 10px 32px;
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0;
   }
 }
 
@@ -88,12 +86,12 @@
 }
 
 .header__nav {
-  display: none;
+  display: block;
   order: 3;
+  margin: 0 auto;
 
-  @media (min-width: $desktop-width) {
-    display: block;
-    margin: 0 auto;
+  @media (max-width: ($desktop-width - 1px)) {
+    display: none;
   }
 }
 
@@ -103,4 +101,8 @@
 
   order: 4;
   white-space: nowrap;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    margin-left: auto;
+  }
 }
