@@ -1,0 +1,96 @@
+.reviews {
+  padding: 100px 0;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    padding: 80px 0;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding: 60px 0;
+  }
+}
+
+.reviews__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    padding: 0 45px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding: 0 15px;
+  }
+}
+
+.reviews__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 53px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin-bottom: 35px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    margin-bottom: 30px;
+  }
+}
+
+.reviews__title {
+  @include title-h3;
+  @include title-with-shadow;
+
+  margin: 0;
+  color: $color-text-primary;
+}
+
+.reviews__controls {
+  display: flex;
+  gap: 4px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    display: none;
+  }
+}
+
+.reviews__wrapper {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.reviews__slider {
+  margin-right: -120px;
+  margin-left: -20px;
+  padding: 20px;
+  overflow: hidden; /* Было visible, изменили на hidden, чтобы второй слайд не вылезал */
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin-right: -45px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-right: -15px;
+  }
+}
+
+.reviews__slide {
+  flex-shrink: 0;
+  width: 700px; /* Убрали min-width: 700px */
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    width: 565px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 290px;
+  }
+}
+

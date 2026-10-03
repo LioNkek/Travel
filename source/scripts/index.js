@@ -51,8 +51,8 @@ new Swiper('.tours__slider', {
   slidesPerGroup: 1,
   spaceBetween: 30,
   navigation: {
-    prevEl: '.arrow-button--prev',
-    nextEl: '.arrow-button--next',
+    prevEl: '.tours__controls .arrow-button--prev',
+    nextEl: '.tours__controls .arrow-button--next',
     disabledClass: 'arrow-button--disabled',
   },
   breakpoints: {
@@ -75,6 +75,24 @@ new Swiper('.education__slider', {
     320: {slidesPerView: 1, spaceBetween: 20},
     768: {slidesPerView: 3, spaceBetween: 25},
     1440: {slidesPerView: 4, spaceBetween: 20},
+  },
+});
+
+new Swiper('.reviews__slider', {
+  slidesPerView: 'auto',
+  spaceBetween: 120,
+  slidesPerGroup: 1,
+
+  navigation: {
+    prevEl: '.reviews__controls .arrow-button--prev',
+    nextEl: '.reviews__controls .arrow-button--next',
+    disabledClass: 'arrow-button--disabled',
+  },
+
+  breakpoints: {
+    320: {spaceBetween: 15},
+    768: {spaceBetween: 20},
+    1440: {spaceBetween: 120},
   },
 });
 

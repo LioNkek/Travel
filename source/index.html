@@ -34,11 +34,7 @@
 
     </div>
   </header>
-  <main>
-    <picture class="main__decor main__decor--clouds-top">
-      <source type="image/webp" srcset="images/clouds/clouds-1@1x.webp 1x, images/clouds/clouds-1@2x.webp 2x">
-      <img src="images/clouds/clouds-1@1x.png" srcset="images/clouds/clouds-1@2x.png 2x" width="602" height="1630" alt="" aria-hidden="true">
-    </picture>
+  <main class="main">
 
     <section class="hero">
       <h1 class="visually-hidden">LIFETOUR — туры в горы</h1>
@@ -49,7 +45,7 @@
           <div class="hero__slide hero__slide--first swiper-slide">
             <div class="hero__container">
               <h2 class="hero__title">Захватывающие<br>вершины Кавказа</h2>
-              <p class="hero__description">В сопровождении опытных гидов вы пройдёте через потрясающие ландшафты и совершите восход на вершину горы Чегет.</p>
+              <p class="hero__description">В&nbsp;сопровождении опытных гидов вы&nbsp;пройдёте через&nbsp;потрясающие ландшафты и&nbsp;совершите восход на&nbsp;вершину горы Чегет.</p>
               <a class="hero__button button" href="#">Смотреть тур</a>
               <ul class="hero__badges">
                 <li class="hero__badge">
@@ -68,7 +64,7 @@
           <div class="hero__slide hero__slide--second swiper-slide">
             <div class="hero__container">
               <h2 class="hero__title">Невероятная<br>природа Камчатки</h2>
-              <p class="hero__description">Незабываемое приключение, во время которого вы отправитесь в путешествие по одному из самых нетронутых уголков дикой природы в мире.</p>
+              <p class="hero__description">Незабываемое приключение, во&nbsp;время которого вы&nbsp;отправитесь в&nbsp;путешествие по&nbsp;одному из&nbsp;самых нетронутых уголков дикой природы в&nbsp;мире.</p>
               <a class="hero__button button" href="#">Смотреть тур</a>
               <ul class="hero__badges">
                 <li class="hero__badge">
@@ -91,7 +87,7 @@
           <div class="hero__slide hero__slide--third swiper-slide">
             <div class="hero__container">
               <h2 class="hero__title">Магические пейзажи<br>Алтайского Края</h2>
-              <p class="hero__description">Алтайский трекинг-тур — это захватывающее приключение с посещением магических и захватывающих дух ландшафтов Алтайских гор.</p>
+              <p class="hero__description">Алтайский трекинг-тур&nbsp;— это&nbsp;захватывающее приключение с&nbsp;посещением магических и&nbsp;захватывающих дух&nbsp;ландшафтов Алтайских&nbsp;гор.</p>
               <a class="hero__button button" href="#">Смотреть тур</a>
               <ul class="hero__badges">
                 <li class="hero__badge">
@@ -465,6 +461,96 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section class="reviews">
+      <div class="reviews__container">
+
+        <!-- Заголовок + стрелки -->
+        <div class="reviews__header">
+          <h2 class="reviews__title" data-title="Отзывы">Отзывы</h2>
+          <div class="reviews__controls">
+            <button class="arrow-button arrow-button--prev" type="button" aria-label="Предыдущий слайд"></button>
+            <button class="arrow-button arrow-button--next" type="button" aria-label="Следующий слайд"></button>
+          </div>
+        </div>
+
+        <!-- Слайдер отзывов -->
+        <div class="reviews__slider swiper">
+          <ul class="reviews__wrapper swiper-wrapper">
+
+            <!-- Отзыв 1 -->
+            <li class="reviews__slide swiper-slide">
+              <article class="review-card">
+                <div class="review-card__image-wrapper">
+                  <img class="review-card__image" src="images/reviews/review-1@1x.jpg" srcset="images/reviews/review-1@1x.jpg 1x, images/reviews/review-1@2x.jpg 2x" width="260" height="293" alt="Фролов Александр" loading="lazy">
+                </div>
+                <div class="review-card__content">
+                  <p class="review-card__text">Осенью ходили в&nbsp;поход на&nbsp;Алтай с&nbsp;друзьями. Впечатления потрясающие! Инструкторы, настоящие эксперты, всему научили, все&nbsp;показали. Делились историями о&nbsp;местах, людях, культуре места.</p>
+                  <p class="review-card__text">С&nbsp;уверенностью могу сказать, что&nbsp;жизнь разделилась на&nbsp;до&nbsp;этого и&nbsp;после. Ещё&nbsp;никогда не&nbsp;отдыхал так&nbsp;душой и&nbsp;телом. Всем очень рекомендую!</p>
+                  <div class="review-card__author">
+                    <span class="review-card__name">Фролов Александр</span>
+                    <span class="review-card__info">38&nbsp;лет, Москва</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Отзыв 2 -->
+            <li class="reviews__slide swiper-slide">
+              <article class="review-card">
+                <div class="review-card__image-wrapper">
+                  <img class="review-card__image" src="images/reviews/review-2@1x.jpg" srcset="images/reviews/review-2@1x.jpg 1x, images/reviews/review-2@2x.jpg 2x" width="260" height="293" alt="Иван Соловьёв" loading="lazy">
+                </div>
+                <div class="review-card__content">
+                  <p class="review-card__text">Хороший полноценный поход с&nbsp;разнообразными локациями. В&nbsp;начале дорога идёт по&nbsp;лыжне, далее прошли мимо полигона, по&nbsp;болотам, у&nbsp;озёр и&nbsp;лесных ручьёв, остатков дач&nbsp;конца 19&nbsp;века. Было очень интересно!</p>
+                  <p class="review-card__text">Инструктор Федор дружелюбный, внимательный к&nbsp;технике безопасности и&nbsp;своим туристам. Всем советую этот&nbsp;тур.</p>
+                  <div class="review-card__author">
+                    <span class="review-card__name">Иван Соловьёв</span>
+                    <span class="review-card__info">25&nbsp;лет, Владивосток</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Отзыв 3 -->
+            <li class="reviews__slide swiper-slide">
+              <article class="review-card">
+                <div class="review-card__image-wrapper">
+                  <img class="review-card__image" src="images/reviews/review-3@1x.jpg" srcset="images/reviews/review-3@1x.jpg 1x, images/reviews/review-3@2x.jpg 2x" width="260" height="293" alt="Мария Петрова" loading="lazy">
+                </div>
+                <div class="review-card__content">
+                  <p class="review-card__text">Ранее не&nbsp;ходила на&nbsp;такие длинные дистанции. В&nbsp;первый день прошли около&nbsp;30&nbsp;км, физически я&nbsp;устала на&nbsp;18&nbsp;км, поэтому не&nbsp;была уверена, пройду&nbsp;ли&nbsp;до&nbsp;конца. Но&nbsp;я&nbsp;справилась. Второй день прошёл легче, чем&nbsp;ожидала, видимо организм уже&nbsp;привык.</p>
+                  <p class="review-card__text">Спасибо ребятам, инструкторам за&nbsp;помощь и&nbsp;поддержку!<br>Я&nbsp;была рада быть в&nbsp;такой компании.</p>
+                  <div class="review-card__author">
+                    <span class="review-card__name">Евгения Баженова</span>
+                    <span class="review-card__info">23&nbsp;года, Кострома</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+            <!-- Отзыв 4 -->
+            <li class="reviews__slide swiper-slide">
+              <article class="review-card">
+                <div class="review-card__image-wrapper">
+                  <img class="review-card__image" src="images/reviews/review-4@1x.jpg" srcset="images/reviews/review-4@1x.jpg 1x, images/reviews/review-4@2x.jpg 2x" width="260" height="293" alt="Дмитрий Волков" loading="lazy">
+                </div>
+                <div class="review-card__content">
+                  <p class="review-card__text">Это&nbsp;был&nbsp;опыт, изменивший мою&nbsp;жизнь! Думала, не&nbsp;справлюсь, но&nbsp;все&nbsp;получилось! Дух&nbsp;захватывает, когда наконец‑то, преодолев все&nbsp;трудности и&nbsp;препятствия, взбираешься на&nbsp;вершину.</p>
+                  <p class="review-card__text">У&nbsp;нас&nbsp;собралась потрясающая команда. Все&nbsp;друг друга поддерживали, по&nbsp;вечерам мы&nbsp;сидели вместе у&nbsp;костра и&nbsp;пели песни. Обязательно повторю такое приключение!</p>
+                  <div class="review-card__author">
+                    <span class="review-card__name">Елена Пирогова</span>
+                    <span class="review-card__info">37&nbsp;лет, Тюмень</span>
+                  </div>
+                </div>
+              </article>
+            </li>
+
+          </ul>
+        </div>
+
       </div>
     </section>
 

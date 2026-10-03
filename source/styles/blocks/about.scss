@@ -28,6 +28,8 @@
 }
 
 .about__image-wrapper {
+  grid-column: 1 / 3;
+  grid-row: 1;
   width: 100%;
   height: 498px;
   overflow: hidden;
@@ -41,12 +43,19 @@
   }
 }
 
+.about__content {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  padding-left: 660px;
+}
+
 .about__image {
   display: block;
   object-fit: cover;
-  object-position: 50% center;
+  object-position: right center;
   width: 100%;
   height: 100%;
+  padding-right: 565px;
 }
 
 .about__title {

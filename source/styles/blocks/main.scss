@@ -2,19 +2,24 @@
   position: relative;
   overflow: hidden;
 
-  &__decor--clouds-top {
+  &::before {
     position: absolute;
-    top: 800px;
-    right: 0;
+    top: 674px;
+    left: calc(50% + 118px);
     z-index: -2;
+    width: 2047px;
+    height: 1630px;
+    content: "";
+    background-image:
+      image-set(
+        url("../../images/clouds/clouds-1@1x.webp") 1x type("image/webp"),
+        url("../../images/clouds/clouds-1@2x.webp") 2x type("image/webp"),
+        url("../../images/clouds/clouds-1@1x.png") 1x type("image/png"),
+        url("../../images/clouds/clouds-1@2x.png") 2x type("image/png")
+      );
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: contain;
     pointer-events: none;
-
-    & img {
-      display: block;
-      object-fit: cover;
-      object-position: left top;
-      width: 602px;
-      height: 1630px;
-    }
   }
 }
