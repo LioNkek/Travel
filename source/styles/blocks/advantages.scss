@@ -1,0 +1,171 @@
+.advantages {
+  padding: 100px 0;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    padding: 60px 0;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding: 40px 0;
+  }
+}
+
+.advantages__container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    padding: 0 45px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding: 0 15px;
+  }
+}
+
+.advantages__title {
+  @include title-h3;
+  @include title-with-shadow;
+
+  margin: 0 0 50px;
+  text-align: center;
+
+  &::before {
+    bottom: 10px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0 0 30px;
+  }
+}
+
+/* === Слайдер === */
+.advantages__slider {
+  margin: 0 -120px;
+  padding: 0 120px;
+
+  overflow: hidden;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    overflow: visible;
+  }
+}
+
+/* === Список карточек === */
+.advantages__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  // Планшет: 2 колонки
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  // Мобилка: 1 колонка
+  @media (max-width: ($tablet-width - 1px)) {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+/* === Карточка-слайд === */
+.advantages__item {
+  flex-shrink: 0;
+  width: 380px;
+  height: auto;
+  // Планшет: пятая карточка по центру
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    &:nth-child(5) {
+      display: flex;
+      grid-column: 1 / -1;
+      justify-content: center;
+
+      .advantage-card {
+        width: calc((100% - 30px) / 2);
+      }
+    }
+  }
+}
+
+/* === Стрелки === */
+.advantages__controls {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 40px;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    display: none;
+  }
+}
+
+/* === Карточка === */
+.advantage-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: $color-white;
+  border: 1px solid rgba($color-blue, 0.2);
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding: 30px 20px;
+  }
+}
+
+.advantage-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin: 0 0 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 24px 24px;
+  border: 1px solid $color-blue;
+
+  &--shield {
+    background-image: url("../../icons/shield.svg");
+  }
+
+  &--crown {
+    background-image: url("../../icons/crown.svg");
+  }
+
+  &--boot {
+    background-image: url("../../icons/boot.svg");
+  }
+
+  &--route {
+    background-image: url("../../icons/route.svg");
+  }
+
+  &--leaf {
+    background-image: url("../../icons/leaf.svg");
+  }
+}
+
+.advantage-card__title {
+  @include title-h6;
+  margin: 0 0 15px;
+  color: $color-text-primary;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0 0 20px;
+  }
+}
+
+.advantage-card__text {
+  @include text-small;
+  margin: 0;
+  color: $color-text-primary;
+}

@@ -1,5 +1,5 @@
 .reviews {
-  padding: 100px 0;
+  padding: 145px 0 112px;
   overflow: hidden;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
@@ -29,7 +29,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 53px;
+  margin-bottom: 28px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     margin-bottom: 35px;
@@ -49,6 +49,10 @@
 
   margin: 0;
   color: $color-text-primary;
+
+  &::before {
+    bottom: 18px;
+  }
 }
 
 .reviews__controls {
@@ -68,8 +72,8 @@
 
 .reviews__slider {
   margin-right: -120px;
-  margin-left: -20px;
-  padding: 20px;
+  padding: 10px;
+  padding-right: 610px;
   overflow: hidden; /* Было visible, изменили на hidden, чтобы второй слайд не вылезал */
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
@@ -82,15 +86,14 @@
 }
 
 .reviews__slide {
-  flex-shrink: 0;
-  width: 700px; /* Убрали min-width: 700px */
+  max-width: 700px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    width: 565px;
+    max-width: 565px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    width: 290px;
+    max-width: 290px;
   }
 }
 
