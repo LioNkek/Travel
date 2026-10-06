@@ -65,6 +65,7 @@
 
 .education__subtitle--process {
   @include title-h5;
+
   margin: 58px 0 29px;
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -83,6 +84,11 @@
 
 .education__slider {
   margin-bottom: 0;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0 -15px;
+    padding: 0 15px;
+  }
 }
 
 .education__wrapper {
@@ -95,6 +101,7 @@
   height: auto;
 }
 
+/* === Процесс обучения === */
 .education__process {
   position: relative;
   display: flex;
@@ -104,6 +111,7 @@
   padding: 0;
   list-style: none;
 
+  /* Горизонтальная линия на десктопе */
   &::after {
     position: absolute;
     right: 0;
@@ -112,18 +120,31 @@
     height: 2px;
     content: "";
     background-color: $color-blue;
+
+    /* Скрываем на планшете */
+    @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+      display: none;
+    }
+
+    /* Скрываем на мобилке — там своя вертикальная линия */
+    @media (max-width: ($tablet-width - 1px)) {
+      display: none;
+    }
   }
 
+  /* Планшет */
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     gap: 25px;
   }
 
+  /* Мобилка */
   @media (max-width: ($tablet-width - 1px)) {
     flex-direction: column;
-    gap: 20px;
+    gap: 0;
   }
 }
 
+/* === Пункт процесса === */
 .education__process-item {
   position: relative;
   display: flex;
@@ -132,6 +153,7 @@
   align-items: flex-start;
   max-width: 253px;
 
+  /* Точка под пунктом — только на десктопе */
   &::before {
     position: absolute;
     bottom: -15px;
@@ -142,12 +164,44 @@
     background-color: $color-blue;
     border-radius: 50%;
 
-    @media (max-width: ($desktop-width - 1px)) {
+    /* Скрываем на планшете */
+    @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
       display: none;
+    }
+  }
+
+  /* Мобилка: иконка в потоке, кружок слева, полоска от точки к точке */
+  @media (max-width: ($tablet-width - 1px)) {
+    max-width: none;
+    padding: 0 0 25px 29px; /* слева 29px под иконку, снизу 25px между пунктами */
+
+    /* Кружок: на 11px ниже иконки (иконка 25px + 11px = 36px), прижат влево */
+    &::before {
+      position: absolute;
+      top: 11px;
+      left: 0;
+      display: block;
+      width: 14px;
+      height: 14px;
+      background-color: $color-blue;
+      border-radius: 50%;
+    }
+
+    /* Полоска: от низа текущего кружка до верха следующего. Тянется автоматически. */
+    &:not(:last-child)::after {
+      position: absolute;
+      top: 25px;        /* 36px (top кружка) + 14px (высота) */
+      bottom: -11px;    /* до верха следующего кружка */
+      left: 6px;        /* центр кружка: 14/2 - 2/2 = 6 */
+      width: 2px;
+      height: auto;
+      content: "";
+      background-color: $color-blue;
     }
   }
 }
 
+/* === Иконка === */
 .education__process-icon {
   display: block;
   flex-shrink: 0;
@@ -158,6 +212,11 @@
   mask-position: center;
   mask-repeat: no-repeat;
   mask-size: contain;
+
+  /* На мобилке: иконка в потоке, справа 9px до текста */
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0 9px 0 0;
+  }
 
   &--map {
     mask-image: url("../../icons/map.svg");
@@ -176,6 +235,7 @@
   }
 }
 
+/* === Текст === */
 .education__process-text {
   @include text-regular;
 

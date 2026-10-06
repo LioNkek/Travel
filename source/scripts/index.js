@@ -62,13 +62,17 @@
     slidesPerView: 3,
     slidesPerGroup: 1,
     spaceBetween: 30,
+    loop: false,
     navigation: {
       prevEl: '.tours__controls .arrow-button--prev',
       nextEl: '.tours__controls .arrow-button--next',
       disabledClass: 'arrow-button--disabled',
     },
     breakpoints: {
-      320: {slidesPerView: 1},
+      320: {
+        slidesPerView: 1,
+        loop: true,
+      },
       768: {slidesPerView: 2, spaceBetween: 18},
       1440: {slidesPerView: 3, spaceBetween: 30},
     },
@@ -79,13 +83,18 @@
     slidesPerView: 4,
     slidesPerGroup: 1,
     spaceBetween: 20,
+    loop: false,
     navigation: {
       prevEl: '.education__controls .arrow-button--prev',
       nextEl: '.education__controls .arrow-button--next',
       disabledClass: 'arrow-button--disabled',
     },
     breakpoints: {
-      320: {slidesPerView: 1, spaceBetween: 20},
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+      },
       768: {slidesPerView: 3, spaceBetween: 25},
       1440: {slidesPerView: 4, spaceBetween: 20},
     },
@@ -143,6 +152,62 @@
       },
     },
   });
+
+  /* ===== Gallery slider ===== */
+  (function () {
+    const gallerySliderEl = document.querySelector('.gallery__slider');
+    if (!gallerySliderEl) {
+      return;
+    }
+
+    const desktopMedia = window.matchMedia('(min-width: 1440px)');
+    let gallerySwiper = null;
+
+    function initGallerySwiper() {
+      if (desktopMedia.matches) {
+      // 1. На десктопе (1440px+): если Swiper активен, уничтожаем его
+        if (gallerySwiper) {
+          gallerySwiper.destroy(true, true);
+          gallerySwiper = null;
+        }
+      } else {
+      // 2. На мобильных и планшетах (< 1440px): создаём Swiper, если его ещё нет
+        if (!gallerySwiper) {
+          gallerySwiper = new Swiper(gallerySliderEl, {
+            slidesPerView: 2,
+            slidesPerGroup: 1,
+            spaceBetween: 5,
+            loop: true,
+            navigation: {
+              prevEl: '.gallery__controls .arrow-button--prev',
+              nextEl: '.gallery__controls .arrow-button--next',
+              disabledClass: 'arrow-button--disabled',
+            },
+            breakpoints: {
+              320: {
+                slidesPerView: 2,
+                spaceBetween: 5,
+              },
+              768: {
+                slidesPerView: 3,
+                spaceBetween: 5,
+              },
+            },
+          });
+        }
+      }
+    }
+
+    // Запуск проверки при загрузке страницы
+    initGallerySwiper();
+
+    // Отслеживание изменений ширины экрана (ресайз)
+    if (desktopMedia.addEventListener) {
+      desktopMedia.addEventListener('change', initGallerySwiper);
+    } else {
+      desktopMedia.addListener(initGallerySwiper);
+    }
+  })();
 
   /* ===== Обработка клавиатуры ===== */
   // Пробел/Enter на интерактивных элементах — эмуляция клика

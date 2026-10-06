@@ -611,6 +611,70 @@
       </div>
     </section>
 
+    <section class="gallery" id="gallery">
+      <div class="gallery__container">
+        <div class="gallery__header">
+          <div class="gallery__heading">
+            <h2 class="gallery__title" data-title="Фотогалерея">Фотогалерея</h2>
+            <p class="gallery__description">Добавляйте фото с&nbsp;хэштегом&nbsp;#лайфтур, а&nbsp;также отмечайте нас&nbsp;на&nbsp;фото. Лучшие фотографии украсят этот раздел нашего сайта.</p>
+          </div>
+          <div class="gallery__controls">
+            <button class="arrow-button arrow-button--prev" type="button" aria-label="Предыдущий слайд"></button>
+            <button class="arrow-button arrow-button--next" type="button" aria-label="Следующий слайд"></button>
+          </div>
+        </div>
+
+        <div class="gallery__slider swiper">
+          <ul class="gallery__list swiper-wrapper">
+
+            <li class="gallery__item swiper-slide">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-1@1x.webp 1x, images/gallery/gallery-1@2x.webp 2x">
+                <img class="gallery__image" src="images/gallery/gallery-1@1x.jpg" srcset="images/gallery/gallery-1@2x.jpg 2x" alt="Турист с рюкзаком стоит на фоне горного хребта." loading="lazy">
+              </picture>
+            </li>
+
+            <li class="gallery__item gallery__item--stack swiper-slide">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-2@1x.webp 1x, images/gallery/gallery-2@2x.webp 2x">
+                <img class="gallery__image" src="images/gallery/gallery-2@1x.jpg" srcset="images/gallery/gallery-2@2x.jpg 2x" alt="Туристы сидят у костра ночью." loading="lazy">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-3@1x.webp 1x, images/gallery/gallery-3@2x.webp 2x">
+                <img class="gallery__image" src="images/gallery/gallery-3@1x.jpg" srcset="images/gallery/gallery-3@2x.jpg 2x" alt="Вершина горы на фоне неба." loading="lazy">
+              </picture>
+            </li>
+
+            <li class="gallery__item swiper-slide">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-4@1x.webp 1x, images/gallery/gallery-4@2x.webp 2x">
+                <img class="gallery__image" src="images/gallery/gallery-4@1x.jpg" srcset="images/gallery/gallery-4@2x.jpg 2x" alt="Панорама гор с высоты." loading="lazy">
+              </picture>
+            </li>
+
+            <li class="gallery__item gallery__item--stack swiper-slide">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-5@1x.webp 1x, images/gallery/gallery-5@2x.webp 2x">
+                <img class="gallery__image" src="images/gallery/gallery-5@1x.jpg" srcset="images/gallery/gallery-5@2x.jpg 2x" alt="Люди идут по леднику." loading="lazy">
+              </picture>
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-6@1x.webp 1x, images/gallery/gallery-6@2x.webp 2x">
+                <img class="gallery__image" src="images/gallery/gallery-6@1x.jpg" srcset="images/gallery/gallery-6@2x.jpg 2x" alt="Палатка ночью под звёздным небом." loading="lazy">
+              </picture>
+            </li>
+
+            <li class="gallery__item swiper-slide">
+              <picture>
+                <source type="image/webp" srcset="images/gallery/gallery-7@1x.webp 1x, images/gallery/gallery-7@2x.webp 2x">
+                <img class="gallery__image" src="images/gallery/gallery-7@1x.jpg" srcset="images/gallery/gallery-7@2x.jpg 2x" alt="Двое туристов у гейзера." loading="lazy">
+              </picture>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+    </section>
+
   </main>
   <script src="vendor/swiper/swiper-bundle.min.js"></script>
   <script src="scripts/index.js" defer></script>
