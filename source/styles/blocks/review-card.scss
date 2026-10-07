@@ -6,6 +6,10 @@
   background-color: $color-white;
   box-shadow: 0 0 20px rgba($color-dark-blue, 0.1);
 
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    box-shadow: 0 0 30px rgba($color-dark-blue, 0.1);
+  }
+
   @media (max-width: ($tablet-width - 1px)) {
     flex-direction: column;
     gap: 20px;
@@ -17,6 +21,11 @@
   width: 258px;
   height: 253px;
   overflow: hidden;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    width: 186px;
+    height: 237px;
+  }
 
   @media (max-width: ($tablet-width - 1px)) {
     width: 100%;
@@ -38,6 +47,10 @@
   flex-direction: column;
   margin-top: -2px;
   padding: 0 20px 10px 0;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    padding: 4.5px 10px 4.5px 0;
+  }
 }
 
 .review-card__text {
@@ -48,6 +61,11 @@
 
   &:last-of-type {
     margin-bottom: 0;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    @include text-xsmall;
+    line-height: 18px;
   }
 }
 

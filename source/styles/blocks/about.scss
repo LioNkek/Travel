@@ -3,7 +3,7 @@
   overflow: hidden;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    padding: 60px 45px 60px 0;
+    padding: 40px 48px 40px 0;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -22,9 +22,13 @@
   align-items: center;
   margin-left: -120px;
 
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    grid-template-columns: minmax(auto, auto) minmax(270px, 4fr);
+    margin-left: -48px;
+  }
+
   @media (max-width: ($tablet-width - 1px)) {
-    grid-template-columns: 1fr;
-    gap: 30px;
+
   }
 }
 
@@ -39,7 +43,9 @@
   overflow: hidden;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    height: 400px;
+    width: calc(100% + 110px);
+    height: 350px;
+    margin-right: -65px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -54,6 +60,11 @@
   align-self: start;
   margin-top: 45px;
   margin-right: 75px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    max-width: 450px;
+    margin: 20px 0 0;
+  }
 }
 
 .about__image {

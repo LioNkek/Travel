@@ -73,11 +73,14 @@
 .reviews__slider {
   margin-right: -120px;
   padding: 10px;
-  padding-right: 610px;
-  overflow: hidden; /* Было visible, изменили на hidden, чтобы второй слайд не вылезал */
+  padding-right: calc(100% - 700px + 120px);
+  overflow: hidden;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     margin-right: -45px;
+    margin-left: -10px;
+    padding: 10px;
+    padding-right: calc(100% - 565px + 45px);
   }
 
   @media (max-width: ($tablet-width - 1px)) {

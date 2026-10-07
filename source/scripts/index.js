@@ -1,13 +1,13 @@
 /* ============================================================
    LIFETOUR — основной скрипт страницы
-   Слайдеры , доступность, обработка клавиатуры
+   Слайдеры, доступность, обработка клавиатуры
    ============================================================ */
+
+/* global Swiper */
 
 (function () {
 
-
   /* ===== Утилита доступности слайдов ===== */
-  // Скрывает неактивные слайды от скринридеров и клавиатуры
   function updateInert(swiper) {
     swiper.slides.forEach((slide) => {
       const isActive = slide.classList.contains('swiper-slide-active');
@@ -22,7 +22,7 @@
   }
 
   /* ===== Hero slider ===== */
-  new Swiper('.hero__slider', {
+  const heroSwiper = new Swiper('.hero__slider', {
     loop: true,
     pagination: {
       el: '.hero__pagination',
@@ -58,7 +58,7 @@
   });
 
   /* ===== Tours slider ===== */
-  new Swiper('.tours__slider', {
+  const toursSwiper = new Swiper('.tours__slider', {
     slidesPerView: 3,
     slidesPerGroup: 1,
     spaceBetween: 30,
@@ -79,7 +79,7 @@
   });
 
   /* ===== Education slider ===== */
-  new Swiper('.education__slider', {
+  const educationSwiper = new Swiper('.education__slider', {
     slidesPerView: 4,
     slidesPerGroup: 1,
     spaceBetween: 20,
@@ -101,7 +101,7 @@
   });
 
   /* ===== Reviews slider ===== */
-  new Swiper('.reviews__slider', {
+  const reviewsSwiper = new Swiper('.reviews__slider', {
     slidesPerView: 1,
     spaceBetween: 120,
     slidesPerGroup: 1,
@@ -112,46 +112,63 @@
     },
     breakpoints: {
       320: {spaceBetween: 15},
-      768: {spaceBetween: 20},
+      768: {spaceBetween: 30},
       1440: {spaceBetween: 120},
     },
   });
 
   /* ===== Advantages slider ===== */
-  // Cлайдер только на десктопе.
-  // На планшете/мобилке Swiper выключен — работает CSS-сетка.
-  // Для корректного зацикливания клонируем 5 слайдов до 10.
-  const advantagesWrapper = document.querySelector('.advantages__slider .swiper-wrapper');
+  (function () {
+    const advantagesSliderEl = document.querySelector('.advantages__slider');
+    if (!advantagesSliderEl) {
+      return;
+    }
 
-  if (advantagesWrapper && advantagesWrapper.children.length === 5) {
-    const originalSlides = Array.from(advantagesWrapper.children);
-    originalSlides.forEach((slide) => {
-      advantagesWrapper.appendChild(slide.cloneNode(true));
-    });
-  }
+    const desktopMedia = window.matchMedia('(min-width: 1440px)');
+    let advantagesSwiper = null;
 
-  new Swiper('.advantages__slider', {
-    enabled: false,
-    slidesPerView: 'auto',
-    slidesPerGroup: 2,
-    spaceBetween: 30,
-    loop: true,
-    navigation: {
-      prevEl: '.advantages__controls .arrow-button--prev',
-      nextEl: '.advantages__controls .arrow-button--next',
-      disabledClass: 'arrow-button--disabled',
-    },
-    breakpoints: {
-      320: {enabled: false},
-      768: {enabled: false},
-      1440: {
-        enabled: true,
-        centeredSlides: true,
-        initialSlide: 2,
-        loopAddBlankSlides: false,
-      },
-    },
-  });
+    function initAdvantagesSwiper() {
+      if (desktopMedia.matches) {
+        if (!advantagesSwiper) {
+          const wrapper = advantagesSliderEl.querySelector('.swiper-wrapper');
+
+          if (wrapper && wrapper.children.length > 0 && wrapper.children.length < 10) {
+            const originalSlides = Array.from(wrapper.children);
+            originalSlides.forEach((slide) => {
+              wrapper.appendChild(slide.cloneNode(true));
+            });
+          }
+
+          advantagesSwiper = new Swiper(advantagesSliderEl, {
+            slidesPerView: 'auto',
+            slidesPerGroup: 2,
+            spaceBetween: 30,
+            loop: true,
+            centeredSlides: true,
+            initialSlide: 2,
+            navigation: {
+              prevEl: '.advantages__controls .arrow-button--prev',
+              nextEl: '.advantages__controls .arrow-button--next',
+              disabledClass: 'arrow-button--disabled',
+            },
+          });
+        }
+      } else if (advantagesSwiper) {
+        advantagesSwiper.destroy(true, true);
+        advantagesSwiper = null;
+
+        const wrapper = advantagesSliderEl.querySelector('.swiper-wrapper');
+        if (wrapper && wrapper.children.length > 5) {
+          while (wrapper.children.length > 5) {
+            wrapper.removeChild(wrapper.lastChild);
+          }
+        }
+      }
+    }
+
+    initAdvantagesSwiper();
+    desktopMedia.addEventListener('change', initAdvantagesSwiper);
+  })();
 
   /* ===== Gallery slider ===== */
   (function () {
@@ -165,52 +182,40 @@
 
     function initGallerySwiper() {
       if (desktopMedia.matches) {
-      // 1. На десктопе (1440px+): если Swiper активен, уничтожаем его
         if (gallerySwiper) {
           gallerySwiper.destroy(true, true);
           gallerySwiper = null;
         }
-      } else {
-      // 2. На мобильных и планшетах (< 1440px): создаём Swiper, если его ещё нет
-        if (!gallerySwiper) {
-          gallerySwiper = new Swiper(gallerySliderEl, {
-            slidesPerView: 2,
-            slidesPerGroup: 1,
-            spaceBetween: 5,
-            loop: true,
-            navigation: {
-              prevEl: '.gallery__controls .arrow-button--prev',
-              nextEl: '.gallery__controls .arrow-button--next',
-              disabledClass: 'arrow-button--disabled',
+      } else if (!gallerySwiper) {
+        gallerySwiper = new Swiper(gallerySliderEl, {
+          slidesPerView: 2,
+          slidesPerGroup: 1,
+          spaceBetween: 5,
+          loop: true,
+          navigation: {
+            prevEl: '.gallery__controls .arrow-button--prev',
+            nextEl: '.gallery__controls .arrow-button--next',
+            disabledClass: 'arrow-button--disabled',
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 5,
             },
-            breakpoints: {
-              320: {
-                slidesPerView: 2,
-                spaceBetween: 5,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 5,
-              },
+            768: {
+              slidesPerView: 3,
+              spaceBetween: 5,
             },
-          });
-        }
+          },
+        });
       }
     }
 
-    // Запуск проверки при загрузке страницы
     initGallerySwiper();
-
-    // Отслеживание изменений ширины экрана (ресайз)
-    if (desktopMedia.addEventListener) {
-      desktopMedia.addEventListener('change', initGallerySwiper);
-    } else {
-      desktopMedia.addListener(initGallerySwiper);
-    }
+    desktopMedia.addEventListener('change', initGallerySwiper);
   })();
 
   /* ===== Обработка клавиатуры ===== */
-  // Пробел/Enter на интерактивных элементах — эмуляция клика
   document.addEventListener('keydown', (evt) => {
     if (evt.code === 'Space' || evt.key === ' ') {
       const isInteractive = evt.target.closest(
@@ -222,4 +227,9 @@
       }
     }
   });
+
+  // Проверяем, что все слайдеры инициализированы
+  if (heroSwiper && toursSwiper && educationSwiper && reviewsSwiper) {
+  // ок
+  }
 })();
