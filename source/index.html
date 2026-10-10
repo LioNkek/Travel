@@ -36,7 +36,7 @@
   </header>
   <main class="main">
 
-    <section class="hero">
+    <section class="hero" id="hero">
       <h1 class="visually-hidden">LIFETOUR — туры в горы</h1>
       <div class="hero__slider swiper">
         <div class="hero__wrapper swiper-wrapper">
@@ -110,7 +110,7 @@
       </div>
     </section>
 
-    <section class="tours">
+    <section class="tours" id="tours">
       <div class="tours__container">
         <div class="tours__header">
           <h2 class="tours__title" data-title="Ближайшие туры">Ближайшие туры</h2>
@@ -310,18 +310,15 @@
       </div>
     </section>
 
-    <section class="education">
+    <section class="education" id="education">
       <div class="education__container">
 
-        <!-- Заголовок секции -->
         <h2 class="education__title" data-title="Обучение">Обучение</h2>
 
-        <!-- Описание -->
         <p class="education__description">
           Обучение проводится квалифицированными специалистами, за плечами которых десятки пройденных маршрутов Кавказа, Крыма, Гималаев, Эльбруса, Алтая, Карелии, Адыгеи и других.
         </p>
 
-        <!-- Подзаголовок «Наши инструкторы» + стрелки -->
         <div class="education__header">
           <h3 class="education__subtitle">Наши инструкторы</h3>
           <div class="education__controls">
@@ -330,11 +327,9 @@
           </div>
         </div>
 
-        <!-- Слайдер инструкторов -->
         <div class="education__slider swiper">
           <ul class="education__wrapper swiper-wrapper">
 
-            <!-- Инструктор 1 — Александр Прокофьев -->
             <li class="education__slide swiper-slide">
               <article class="instructor-card">
                 <div class="instructor-card__image-wrapper">
@@ -348,7 +343,6 @@
               </article>
             </li>
 
-            <!-- Инструктор 2 — Светлана Афиногенова -->
             <li class="education__slide swiper-slide">
               <article class="instructor-card">
                 <div class="instructor-card__image-wrapper">
@@ -362,7 +356,6 @@
               </article>
             </li>
 
-            <!-- Инструктор 3 — Надежда Колесниченко -->
             <li class="education__slide swiper-slide">
               <article class="instructor-card">
                 <div class="instructor-card__image-wrapper">
@@ -376,7 +369,6 @@
               </article>
             </li>
 
-            <!-- Инструктор 4 — Фёдор Кайгородов -->
             <li class="education__slide swiper-slide">
               <article class="instructor-card">
                 <div class="instructor-card__image-wrapper">
@@ -390,7 +382,6 @@
               </article>
             </li>
 
-            <!-- Инструктор 5 — Даниэль Васнецов -->
             <li class="education__slide swiper-slide">
               <article class="instructor-card">
                 <div class="instructor-card__image-wrapper">
@@ -407,10 +398,8 @@
           </ul>
         </div>
 
-        <!-- Подзаголовок «Процесс обучения» -->
         <h3 class="education__subtitle education__subtitle--process">Процесс обучения</h3>
 
-        <!-- 4 элемента процесса обучения -->
         <ul class="education__process">
           <li class="education__process-item">
             <span class="education__process-icon education__process-icon--map"></span>
@@ -433,7 +422,7 @@
       </div>
     </section>
 
-    <section class="about">
+    <section class="about" id="about">
       <div class="about__container">
         <div class="about__wrapper">
           <div class="about__image-wrapper">
@@ -464,10 +453,9 @@
       </div>
     </section>
 
-    <section class="reviews">
+    <section class="reviews" id="reviews">
       <div class="reviews__container">
 
-        <!-- Заголовок + стрелки -->
         <div class="reviews__header">
           <h2 class="reviews__title" data-title="Отзывы">Отзывы</h2>
           <div class="reviews__controls">
@@ -476,11 +464,9 @@
           </div>
         </div>
 
-        <!-- Слайдер отзывов -->
         <div class="reviews__slider swiper">
           <ul class="reviews__wrapper swiper-wrapper">
 
-            <!-- Отзыв 1 -->
             <li class="reviews__slide swiper-slide">
               <article class="review-card">
                 <div class="review-card__image-wrapper">
@@ -497,7 +483,6 @@
               </article>
             </li>
 
-            <!-- Отзыв 2 -->
             <li class="reviews__slide swiper-slide">
               <article class="review-card">
                 <div class="review-card__image-wrapper">
@@ -514,7 +499,6 @@
               </article>
             </li>
 
-            <!-- Отзыв 3 -->
             <li class="reviews__slide swiper-slide">
               <article class="review-card">
                 <div class="review-card__image-wrapper">
@@ -531,7 +515,6 @@
               </article>
             </li>
 
-            <!-- Отзыв 4 -->
             <li class="reviews__slide swiper-slide">
               <article class="review-card">
                 <div class="review-card__image-wrapper">
@@ -554,7 +537,7 @@
       </div>
     </section>
 
-    <section class="advantages">
+    <section class="advantages" id="advantages">
       <div class="advantages__container">
         <h2 class="advantages__title" data-title="Преимущества">Преимущества</h2>
 
@@ -675,7 +658,7 @@
       </div>
     </section>
 
-    <section class="questions" id="contacts">
+    <section class="questions" id="questions">
       <div class="questions__container">
         <h2 class="questions__title" data-title="Остались вопросы?">Остались вопросы?</h2>
         <p class="questions__description">Заполните форму и наш оператор свяжется с вами для консультации.</p>
@@ -739,6 +722,44 @@
     </section>
 
   </main>
+
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__top">
+        <a class="footer__logo" aria-label="LIFETOUR — на главную">
+          <img class="footer__logo-image" src="images/logo.svg" width="142" height="42" alt="LIFETOUR">
+        </a>
+
+        <nav class="footer__nav main-nav" aria-label="Навигация в подвале">
+          <ul class="main-nav__list">
+            <li class="main-nav__item"><a class="main-nav__link" href="#tours">Туры</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#education">Обучение</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#about">О нас</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#reviews">Отзывы</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#gallery">Фотографии</a></li>
+            <li class="main-nav__item"><a class="main-nav__link" href="#contacts">Контакты</a></li>
+          </ul>
+        </nav>
+
+        <a class="footer__phone" href="tel:+78007253232">8 800 725-32-32</a>
+      </div>
+
+      <ul class="footer__socials">
+        <li class="footer__social-item">
+          <a class="footer__social-link footer__social-link--vk" href="https://vk.com/" aria-label="ВКонтакте" target="_blank" rel="noopener noreferrer"></a>
+        </li>
+        <li class="footer__social-item">
+          <a class="footer__social-link footer__social-link--ok" href="https://ok.ru/" aria-label="Одноклассники" target="_blank" rel="noopener noreferrer"></a>
+        </li>
+        <li class="footer__social-item">
+          <a class="footer__social-link footer__social-link--tg" href="https://reddit.com/" aria-label="Telegram" target="_blank" rel="noopener noreferrer"></a>
+        </li>
+      </ul>
+
+      <a class="footer__policy" href="#">Политика конфиденциальности</a>
+    </div>
+  </footer>
+
   <script src="vendor/swiper/swiper-bundle.min.js"></script>
   <script src="scripts/index.js" defer></script>
 </body>

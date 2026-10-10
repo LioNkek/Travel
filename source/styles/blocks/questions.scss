@@ -108,33 +108,54 @@
   min-width: 0;
 }
 
+/* === Инпут === */
 .questions__input {
   @include input-text;
 
   width: 100%;
   padding: 20px 30px;
-  color: $color-text-primary;
-  background-color: $color-white;
-  border: 1px solid transparent;
+  color: rgba($color-text-primary, 0.5);
+  background-color: $color-bg-primary;
+  border: 1px solid rgba($color-blue, 0.1);
+  border-radius: 2px;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: border-color 0.2s ease, color 0.2s ease;
 
   &::placeholder {
-    color: $color-text-disabled;
+    color: rgba($color-text-primary, 0.5);
+    opacity: 100%;
+    transition: opacity 0.2s ease;
   }
 
   &:hover {
-    border-color: rgba($color-blue, 0.5);
+    border-color: $color-blue;
   }
 
   &:focus-visible {
-    border-color: $color-blue;
+    color: $color-text-primary;
+    border-color: $color-text-primary;
+  }
+
+  &:focus-visible::placeholder {
+    opacity: 0%;
+  }
+
+  &:disabled {
+    color: rgba($color-gray-disabled, 0.5);
+    border-color: $color-gray-disabled;
+    cursor: default;
+
+    &::placeholder {
+      color: rgba($color-gray-disabled, 0.5);
+    }
   }
 }
 
-.questions__input--error {
-  background-color: rgb(255 0 0 / 5%);
-  border-color: #ff0000;
+/* === Ошибка === */
+.questions__input--error,
+.questions__input--error:hover,
+.questions__input--error:focus-visible {
+  border-color: $color-error;
 }
 
 .questions__button {

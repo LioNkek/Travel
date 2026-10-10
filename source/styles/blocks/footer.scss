@@ -1,0 +1,162 @@
+.footer {
+  margin-top: auto;
+  border-top: 1px solid rgba($color-dark-gray, 0.2);
+}
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px 120px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    gap: 34px;
+    padding: 32px 45px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    gap: 23px;
+    align-items: center;
+    padding: 32px 15px 20px;
+  }
+}
+
+/* === Верхний ряд === */
+.footer__top {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    flex-direction: column;
+    gap: 34px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    flex-direction: column;
+    gap: 23px;
+    align-items: center;
+  }
+}
+
+/* === Логотип === */
+.footer__logo {
+  @include logo-states;
+
+  display: flex;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    order: 1;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    order: 1;
+  }
+}
+
+.footer__logo-image {
+  display: block;
+}
+
+/* === Навигация === */
+.footer__nav {
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    order: 2;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    order: 2;
+    width: 100%;
+  }
+}
+
+.footer__nav .main-nav__list {
+  @media (max-width: ($tablet-width - 1px)) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);   /* ← 3 строки */
+    grid-auto-flow: column;                 /* ← заполняем по столбцам */
+    gap: 15px 30px;
+    justify-items: center;
+    text-align: center;
+  }
+}
+
+/* === Телефон === */
+.footer__phone {
+  @include title-h6;
+  @include link-states;
+
+  white-space: nowrap;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    display: none;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    display: none;
+  }
+}
+
+/* === Соцсети === */
+.footer__socials {
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    order: 3;
+  }
+}
+
+.footer__social-item {
+  display: flex;
+}
+
+.footer__social-link {
+  @include icon-social-states;
+
+  width: 36px;
+  height: 36px;
+
+  &::before {
+    width: 16px;
+    height: 16px;
+    content: "";
+    background-color: $color-text-primary;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: contain;
+  }
+
+  &--vk::before {
+    mask-image: url("../../icons/vk.svg");
+  }
+
+  &--ok::before {
+    mask-image: url("../../icons/ok.svg");
+  }
+
+  &--tg::before {
+    mask-image: url("../../icons/reddit.svg");
+  }
+}
+
+/* === Политика === */
+.footer__policy {
+  @include text-xsmall;
+  @include link-states;
+
+  color: $color-text-primary;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    order: 4;
+  }
+}

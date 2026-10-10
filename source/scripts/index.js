@@ -229,7 +229,6 @@
   });
 
   /* ===== Форма обратной связи ===== */
-  // Показываем ошибки только после попытки отправки
   (function () {
     const form = document.querySelector('.questions__form');
     if (!form) {
@@ -238,17 +237,13 @@
 
     const inputs = form.querySelectorAll('.questions__input');
 
-    form.addEventListener('submit', () => {
-      inputs.forEach((input) => {
-        if (input.validity.valid) {
-          input.classList.remove('questions__input--error');
-        } else {
-          input.classList.add('questions__input--error');
-        }
-      });
-    });
-
     inputs.forEach((input) => {
+    // Браузер вызывает "invalid" при попытке отправки невалидного поля
+      input.addEventListener('invalid', () => {
+        input.classList.add('questions__input--error');
+      });
+
+      // Снимаем подсветку при вводе
       input.addEventListener('input', () => {
         input.classList.remove('questions__input--error');
       });
