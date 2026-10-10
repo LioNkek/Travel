@@ -1,0 +1,205 @@
+.contacts {
+  padding: 100px 0;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    padding: 60px 0;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    padding: 40px 0;
+  }
+}
+
+.contacts__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 120px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 0 45px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    padding: 0 15px;
+  }
+}
+
+.contacts__title {
+  @include title-h3;
+  @include title-with-shadow;
+
+  margin: 0 0 25px;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0 0 15px;
+  }
+}
+
+.contacts__description {
+  @include text-regular;
+
+  margin: 0 0 50px;
+  color: $color-text-primary;
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0 0 30px;
+  }
+}
+
+.contacts__list {
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contacts__item {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+}
+
+.contacts__icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  background-color: $color-text-primary;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+
+  &--phone {
+    mask-image: url("../../icons/phone.svg");
+  }
+
+  &--email {
+    mask-image: url("../../icons/email.svg");
+  }
+
+  &--address {
+    mask-image: url("../../icons/location.svg");
+  }
+}
+
+.contacts__text {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contacts__label {
+  @include title-h6;
+
+  color: $color-text-primary;
+}
+
+.contacts__link {
+  @include text-regular;
+  @include link-states;
+  text-decoration: none;
+
+  color: $color-text-primary;
+
+  &:hover {
+    color: $color-blue;
+  }
+}
+
+.contacts__address {
+  @include text-regular;
+
+  margin: 0;
+  color: $color-text-primary;
+}
+
+/* === Карта === */
+.contacts__map-wrapper {
+  position: relative;
+  width: 600px;
+  height: 324px;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    width: auto;
+    height: 340px;
+    margin: 0 -45px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: auto;
+    height: 343px;
+    margin: 0 -15px;
+  }
+}
+
+.contacts__map-inner {
+  position: absolute;
+  top: -3px;
+  left: 50%;
+  width: 768px;
+  height: 370px;
+  transform: translateX(-50%);
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    top: 50%;
+    width: 100%;                     /* ← растягивается по ширине */
+    height: auto;                    /* ← высота от ширины */
+    aspect-ratio: 768 / 370;
+    transform: translate(-50%, -50%);
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    top: 0;
+    width: auto;
+    height: 100%;
+    aspect-ratio: 768 / 370;
+  }
+}
+
+.contacts__map {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* === Иконка === */
+.contacts__marker {
+  position: absolute;
+  top: 52%;
+  left: 61%;
+  z-index: 1;
+  width: 42px;
+  height: 42px;
+  background-color: $color-blue;
+  mask-image: url("../../icons/location-active.svg");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    top: 54%;
+    left: 61%;
+    width: 28px;
+    height: 28px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    top: 54%;
+    left: 61%;
+    width: 28px;
+    height: 28px;
+  }
+}

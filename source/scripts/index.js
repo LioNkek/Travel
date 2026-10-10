@@ -228,8 +228,35 @@
     }
   });
 
+  /* ===== Форма обратной связи ===== */
+  // Показываем ошибки только после попытки отправки
+  (function () {
+    const form = document.querySelector('.questions__form');
+    if (!form) {
+      return;
+    }
+
+    const inputs = form.querySelectorAll('.questions__input');
+
+    form.addEventListener('submit', () => {
+      inputs.forEach((input) => {
+        if (input.validity.valid) {
+          input.classList.remove('questions__input--error');
+        } else {
+          input.classList.add('questions__input--error');
+        }
+      });
+    });
+
+    inputs.forEach((input) => {
+      input.addEventListener('input', () => {
+        input.classList.remove('questions__input--error');
+      });
+    });
+  })();
+
   // Проверяем, что все слайдеры инициализированы
   if (heroSwiper && toursSwiper && educationSwiper && reviewsSwiper) {
-  // ок
+    document.documentElement.classList.add('swipers-ready');
   }
 })();

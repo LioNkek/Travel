@@ -123,9 +123,14 @@ $color-bullet-ring-focus: rgba($color-white, 0.5);
 
 /* Фон */
 $color-bg-primary: $color-white;
+$color-bg-dark: $color-dark-gray;
 
 /* ============ ОВЕРЛЕИ ============ */
 
+/* Однотонные затемнения */
+$overlay-dark-20: rgb(0 0 0 / 20%);
+
+/* Градиентные */
 $overlay-slider: linear-gradient(
   112.1deg,
   rgb(15 20 41 / 33%) 17.23%,

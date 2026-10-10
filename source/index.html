@@ -675,6 +675,69 @@
       </div>
     </section>
 
+    <section class="questions" id="contacts">
+      <div class="questions__container">
+        <h2 class="questions__title" data-title="Остались вопросы?">Остались вопросы?</h2>
+        <p class="questions__description">Заполните форму и наш оператор свяжется с вами для консультации.</p>
+
+        <form class="questions__form" action="https://echo.htmlacademy.ru" method="post">
+          <label class="questions__field">
+            <span class="visually-hidden">Телефон</span>
+            <input class="questions__input" type="tel" name="phone" placeholder="Телефон" pattern="[0-9+\(\)\s\-]+" required>
+          </label>
+
+          <label class="questions__field">
+            <span class="visually-hidden">Email</span>
+            <input class="questions__input" type="email" name="e-mail" placeholder="Email" required>
+          </label>
+
+          <button class="questions__button button" type="submit">Отправить</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts">
+      <div class="contacts__container">
+        <div class="contacts__info">
+          <h2 class="contacts__title" data-title="Контакты">Контакты</h2>
+          <p class="contacts__description">Свяжитесь с нами любым удобным для вас способом или приходите к нам в гости. Мы будем рады поделиться увлекательными историями и подобрать для вас тур.</p>
+
+          <ul class="contacts__list">
+            <li class="contacts__item">
+              <span class="contacts__icon contacts__icon--phone"></span>
+              <div class="contacts__text">
+                <span class="contacts__label">Телефон</span>
+                <a class="contacts__link" href="tel:+79837454545">+7 983 745-45-45</a>
+              </div>
+            </li>
+
+            <li class="contacts__item">
+              <span class="contacts__icon contacts__icon--email"></span>
+              <div class="contacts__text">
+                <span class="contacts__label">Email</span>
+                <a class="contacts__link" href="mailto:info@lifetour.com">info@lifetour.com</a>
+              </div>
+            </li>
+
+            <li class="contacts__item">
+              <span class="contacts__icon contacts__icon--address"></span>
+              <div class="contacts__text">
+                <span class="contacts__label">Адрес</span>
+                <span class="contacts__address">г. Москва, пр-т Мира, д. 14, офис 101</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="contacts__map-wrapper">
+          <div class="contacts__map-inner">
+            <img class="contacts__map" src="images/map/map@1x.jpg" srcset="images/map/map@2x.jpg 2x" alt="Карта с отметкой офиса LIFETOUR по адресу г. Москва, пр-т Мира, д. 14." width="768" height="370" loading="lazy">
+            <span class="contacts__marker"></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
   </main>
   <script src="vendor/swiper/swiper-bundle.min.js"></script>
   <script src="scripts/index.js" defer></script>
