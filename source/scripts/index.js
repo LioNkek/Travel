@@ -250,6 +250,28 @@
     });
   })();
 
+  /* ===== Бургер-меню ===== */
+  (function () {
+    const header = document.querySelector('.header');
+    const burgerButton = document.querySelector('.header__burger');
+
+    if (!header || !burgerButton) {
+      return;
+    }
+
+    burgerButton.addEventListener('click', () => {
+      const isOpen = header.classList.toggle('is-open');
+
+      if (isOpen) {
+        document.body.style.overflow = 'hidden';
+        burgerButton.setAttribute('aria-label', 'Закрыть меню');
+      } else {
+        document.body.style.overflow = '';
+        burgerButton.setAttribute('aria-label', 'Открыть меню');
+      }
+    });
+  })();
+
   // Проверяем, что все слайдеры инициализированы
   if (heroSwiper && toursSwiper && educationSwiper && reviewsSwiper) {
     document.documentElement.classList.add('swipers-ready');
