@@ -24,7 +24,6 @@
   }
 }
 
-/* === Верхний ряд === */
 .footer__top {
   display: flex;
   gap: 30px;
@@ -44,7 +43,6 @@
   }
 }
 
-/* === Логотип === */
 .footer__logo {
   @include logo-states;
 
@@ -63,7 +61,6 @@
   display: block;
 }
 
-/* === Навигация === */
 .footer__nav {
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     order: 2;
@@ -75,19 +72,6 @@
   }
 }
 
-.footer__nav .main-nav__list {
-  @media (max-width: ($tablet-width - 1px)) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, auto);   /* ← 3 строки */
-    grid-auto-flow: column;                 /* ← заполняем по столбцам */
-    gap: 15px 30px;
-    justify-items: center;
-    text-align: center;
-  }
-}
-
-/* === Телефон === */
 .footer__phone {
   @include title-h6;
   @include link-states;
@@ -103,7 +87,6 @@
   }
 }
 
-/* === Соцсети === */
 .footer__socials {
   display: flex;
   gap: 15px;
@@ -149,7 +132,6 @@
   }
 }
 
-/* === Политика === */
 .footer__policy {
   @include text-xsmall;
   @include link-states;

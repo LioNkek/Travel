@@ -1,43 +1,56 @@
 .header {
-  position: fixed;
+  position: relative;
   top: 0;
   left: 0;
   z-index: 5;
   width: 100%;
   background-color: $color-blue;
+}
 
-  &.is-open {
-    height: 100vh;
-    overflow-y: auto;
-    background-color: rgba($color-dark-gray, 0.6);
+.header--open .header__burger {
+  mask-image: url("../../icons/close.svg");
+}
 
-    .header__burger {
-      mask-image: url("../../icons/close.svg");
-    }
+.header--open .header__nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-height: calc(100vh - 100px);
+  padding: 20px 15px 40px;
+  overflow-y: auto;
+  background-color: $color-blue;
 
-    .header__nav {
-      position: absolute;
-      top: 100%;
-      left: 0;
-      display: block;
-      box-sizing: border-box;
-      width: 100%;
-      padding: 20px 15px 40px;
-      background-color: $color-blue;
+  @supports (height: 100dvh) {
+    max-height: calc(100dvh - 100px);
+  }
 
-      @media (min-width: $tablet-width) {
-        padding: 20px 45px 40px;
-      }
-    }
-
-    .header__nav .main-nav__list {
-      display: flex;
-      flex-direction: column;
-      gap: 22px;
-    }
+  @media (min-width: $tablet-width) {
+    padding: 20px 45px 40px;
   }
 }
 
+.header--open .main-nav__list--header {
+  @media (max-width: ($desktop-width - 1px)) {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+  }
+}
+
+.header--open .header__overlay {
+  display: block;
+}
+
+.header__overlay {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  display: none;
+  background-color: rgba($color-dark-gray, 0.6);
+}
 
 .header__container {
   position: relative;

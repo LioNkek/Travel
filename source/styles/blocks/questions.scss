@@ -108,7 +108,6 @@
   min-width: 0;
 }
 
-/* === Инпут === */
 .questions__input {
   @include input-text;
 
@@ -151,7 +150,6 @@
   }
 }
 
-/* === Ошибка === */
 .questions__input--error,
 .questions__input--error:hover,
 .questions__input--error:focus-visible {
@@ -160,7 +158,7 @@
 
 .questions__button {
   @include button-primary-states;
-  @include button-big;
+  @include button-regular;
 
   flex-shrink: 0;
   min-width: 200px;

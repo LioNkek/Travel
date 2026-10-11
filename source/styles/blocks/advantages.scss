@@ -41,7 +41,6 @@
   }
 }
 
-/* === Слайдер === */
 .advantages__slider {
   margin: 0 -120px;
   padding: 0 120px;
@@ -54,20 +53,17 @@
   }
 }
 
-/* === Список карточек === */
 .advantages__list {
   margin: 0;
   padding: 0;
   list-style: none;
 
-  // Планшет: 2 колонки
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
   }
 
-  // Мобилка: 1 колонка
   @media (max-width: ($tablet-width - 1px)) {
     display: grid;
     grid-template-columns: 1fr;
@@ -75,34 +71,29 @@
   }
 }
 
-/* === Карточка-слайд === */
 .advantages__item {
   height: auto;
 
-  // Десктоп
   @media (min-width: $desktop-width) {
     flex-shrink: 0;
     width: 380px;
   }
 
-  // Планшет
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     width: auto;
 
-    // Пятая карточка по центру (если она нечётная и последняя)
     &:nth-child(odd):last-child {
       display: flex;
       grid-column: 1 / -1;
       justify-content: center;
 
       & .advantage-card {
-        width: calc((100% - 30px) / 2); // Ширина как у одной колонки Grid
+        width: calc((100% - 30px) / 2);
       }
     }
   }
 }
 
-/* === Стрелки === */
 .advantages__controls {
   display: flex;
   gap: 10px;
@@ -114,7 +105,6 @@
   }
 }
 
-/* === Карточка === */
 .advantage-card {
   display: flex;
   flex-direction: column;

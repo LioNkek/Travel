@@ -11,3 +11,15 @@
   @include button-regular;
   @include menu-item-states;
 }
+
+.main-nav__list--footer {
+  @media (max-width: ($tablet-width - 1px)) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, auto);
+    grid-auto-flow: column;
+    gap: 15px 30px;
+    justify-items: center;
+    text-align: center;
+  }
+}

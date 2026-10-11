@@ -13,14 +13,14 @@
 <body class="page__body">
   <header class="header">
     <div class="header__container">
-      <button class="header__burger" type="button" aria-label="Открыть меню"></button>
+      <button class="header__burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="main-nav"></button>
 
       <div class="header__brand">
-        <a class="header__logo" aria-label="LIFETOUR — на главную">
+        <a class="header__logo" href="index.html" aria-label="LIFETOUR — на главную">
           <img class="header__logo-image" src="images/logo.svg" width="142" height="42" alt="LIFETOUR">
         </a>
-        <nav class="header__nav main-nav" aria-label="Основная навигация">
-          <ul class="main-nav__list">
+        <nav class="header__nav main-nav" id="main-nav" aria-label="Основная навигация">
+          <ul class="main-nav__list main-nav__list--header">
             <li class="main-nav__item"><a class="main-nav__link main-nav__link--on-dark" href="#tours">Туры</a></li>
             <li class="main-nav__item"><a class="main-nav__link main-nav__link--on-dark" href="#education">Обучение</a></li>
             <li class="main-nav__item"><a class="main-nav__link main-nav__link--on-dark" href="#about">О нас</a></li>
@@ -33,6 +33,7 @@
       </div>
 
     </div>
+    <div class="header__overlay"></div>
   </header>
   <main class="main">
 
@@ -726,12 +727,12 @@
   <footer class="footer">
     <div class="footer__container">
       <div class="footer__top">
-        <a class="footer__logo" aria-label="LIFETOUR — на главную">
+        <a class="footer__logo" href="index.html" aria-label="LIFETOUR — на главную">
           <img class="footer__logo-image" src="images/logo.svg" width="142" height="42" alt="LIFETOUR">
         </a>
 
         <nav class="footer__nav main-nav" aria-label="Навигация в подвале">
-          <ul class="main-nav__list">
+          <ul class="main-nav__list main-nav__list--footer">
             <li class="main-nav__item"><a class="main-nav__link" href="#tours">Туры</a></li>
             <li class="main-nav__item"><a class="main-nav__link" href="#education">Обучение</a></li>
             <li class="main-nav__item"><a class="main-nav__link" href="#about">О нас</a></li>

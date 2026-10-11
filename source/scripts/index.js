@@ -34,7 +34,7 @@
         updateInert(this);
         if (this.pagination && this.pagination.el) {
           this.pagination.el.addEventListener('keydown', (evt) => {
-            if (evt.code === 'Space' || evt.key === ' ') {
+            if (evt.key === ' ') {
               evt.preventDefault();
             }
           });
@@ -46,7 +46,7 @@
       click(swiper, event) {
         const isInteractive = event.target.closest('a, button, .swiper-pagination-bullet');
         if (!isInteractive) {
-          const activeSlide = swiper.slides.find((slide) =>
+          const activeSlide = Array.from(swiper.slides).find((slide) =>
             slide.classList.contains('swiper-slide-active'),
           );
           if (activeSlide) {
@@ -71,10 +71,15 @@
     breakpoints: {
       320: {
         slidesPerView: 1,
-        loop: true,
       },
-      768: {slidesPerView: 2, spaceBetween: 18},
-      1440: {slidesPerView: 3, spaceBetween: 30},
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 18,
+      },
+      1440: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+      },
     },
   });
 
@@ -93,10 +98,15 @@
       320: {
         slidesPerView: 1,
         spaceBetween: 20,
-        loop: true,
       },
-      768: {slidesPerView: 3, spaceBetween: 25},
-      1440: {slidesPerView: 4, spaceBetween: 20},
+      768: {
+        slidesPerView: 3,
+        spaceBetween: 25,
+      },
+      1440: {
+        slidesPerView: 4,
+        spaceBetween: 20,
+      },
     },
   });
 
@@ -126,15 +136,16 @@
 
     const desktopMedia = window.matchMedia('(min-width: 1440px)');
     let advantagesSwiper = null;
+    let originalSlidesCount = 0;
 
     function initAdvantagesSwiper() {
       if (desktopMedia.matches) {
         if (!advantagesSwiper) {
           const wrapper = advantagesSliderEl.querySelector('.swiper-wrapper');
 
-          if (wrapper && wrapper.children.length > 0 && wrapper.children.length < 10) {
-            const originalSlides = Array.from(wrapper.children);
-            originalSlides.forEach((slide) => {
+          if (wrapper) {
+            originalSlidesCount = wrapper.children.length;
+            Array.from(wrapper.children).forEach((slide) => {
               wrapper.appendChild(slide.cloneNode(true));
             });
           }
@@ -158,8 +169,8 @@
         advantagesSwiper = null;
 
         const wrapper = advantagesSliderEl.querySelector('.swiper-wrapper');
-        if (wrapper && wrapper.children.length > 5) {
-          while (wrapper.children.length > 5) {
+        if (wrapper) {
+          while (wrapper.children.length > originalSlidesCount) {
             wrapper.removeChild(wrapper.lastChild);
           }
         }
@@ -215,19 +226,6 @@
     desktopMedia.addEventListener('change', initGallerySwiper);
   })();
 
-  /* ===== Обработка клавиатуры ===== */
-  document.addEventListener('keydown', (evt) => {
-    if (evt.code === 'Space' || evt.key === ' ') {
-      const isInteractive = evt.target.closest(
-        'button, a, [role="button"], .swiper-pagination-bullet, .arrow-button',
-      );
-      if (isInteractive) {
-        evt.preventDefault();
-        evt.target.click();
-      }
-    }
-  });
-
   /* ===== Форма обратной связи ===== */
   (function () {
     const form = document.querySelector('.questions__form');
@@ -259,17 +257,67 @@
       return;
     }
 
-    burgerButton.addEventListener('click', () => {
-      const isOpen = header.classList.toggle('is-open');
+    const desktopMedia = window.matchMedia('(min-width: 1440px)');
 
+    function openMenu() {
+      header.classList.add('header--open');
+      burgerButton.setAttribute('aria-expanded', 'true');
+      burgerButton.setAttribute('aria-label', 'Закрыть меню');
+      document.body.classList.add('no-scroll');
+    }
+
+    function closeMenu() {
+      header.classList.remove('header--open');
+      burgerButton.setAttribute('aria-expanded', 'false');
+      burgerButton.setAttribute('aria-label', 'Открыть меню');
+      document.body.classList.remove('no-scroll');
+    }
+
+    burgerButton.addEventListener('click', () => {
+      const isOpen = header.classList.contains('header--open');
       if (isOpen) {
-        document.body.style.overflow = 'hidden';
-        burgerButton.setAttribute('aria-label', 'Закрыть меню');
+        closeMenu();
       } else {
-        document.body.style.overflow = '';
-        burgerButton.setAttribute('aria-label', 'Открыть меню');
+        openMenu();
       }
     });
+
+    document.addEventListener('keydown', (evt) => {
+      if (evt.key === 'Escape' && header.classList.contains('header--open')) {
+        closeMenu();
+        burgerButton.focus();
+      }
+    });
+
+    const overlay = document.querySelector('.header__overlay');
+
+    if (overlay) {
+      overlay.addEventListener('click', () => {
+        if (header.classList.contains('header--open')) {
+          closeMenu();
+        }
+      });
+    }
+
+    // Сбрасываем состояние меню при переходе на десктопную ширину
+    function handleDesktopChange(evt) {
+      if (evt.matches && header.classList.contains('header--open')) {
+        closeMenu();
+      }
+    }
+
+    desktopMedia.addEventListener('change', handleDesktopChange);
+
+    const headerNav = header.querySelector('.header__nav');
+
+    if (headerNav) {
+      headerNav.addEventListener('click', (evt) => {
+        const link = evt.target.closest('.main-nav__link');
+        if (link && header.classList.contains('header--open')) {
+          closeMenu();
+        }
+      });
+    }
   })();
 
   // Проверяем, что все слайдеры инициализированы
