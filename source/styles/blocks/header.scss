@@ -19,7 +19,7 @@
   box-sizing: border-box;
   width: 100%;
   max-height: calc(100vh - 100px);
-  padding: 20px 15px 40px;
+  padding: 12px 15px 48px;
   overflow-y: auto;
   background-color: $color-blue;
 
@@ -28,7 +28,7 @@
   }
 
   @media (min-width: $tablet-width) {
-    padding: 20px 45px 40px;
+    padding: 29px 45px 68px;
   }
 }
 
@@ -36,7 +36,11 @@
   @media (max-width: ($desktop-width - 1px)) {
     display: flex;
     flex-direction: column;
-    gap: 22px;
+    gap: 23px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    gap: 17px;
   }
 }
 
@@ -77,6 +81,7 @@
 
 .header__burger {
   display: none;
+  align-self: flex-start;
   order: 1;
   width: 26px;
   height: 26px;
@@ -91,6 +96,10 @@
 
   @media (max-width: ($desktop-width - 1px)) {
     display: block;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    align-self: center;
   }
 }
 
@@ -155,5 +164,10 @@
 
   @media (max-width: ($desktop-width - 1px)) {
     margin-left: auto;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin-top: 2px;
+    margin-bottom: -2px;
   }
 }

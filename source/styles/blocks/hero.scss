@@ -85,6 +85,7 @@
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     position: static;
+    margin-top: -61px;
     padding: 100px 45px;
   }
 
@@ -107,7 +108,7 @@
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     max-width: none;
-    margin: 0 0 15px;
+    margin: 0 0 13px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -122,7 +123,7 @@
   @include text-big;
 
   max-width: 464px;
-  margin: 0 0 35px;
+  margin: 0 0 37px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     max-width: none;

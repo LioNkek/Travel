@@ -1,9 +1,9 @@
 .gallery {
-  padding: 100px 0;
+  padding: 100px 0 0;
   overflow: hidden;
 
   @media (max-width: ($desktop-width - 1px)) {
-    padding: 60px 0;
+    padding: 49px 0 3px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -30,7 +30,11 @@
   gap: 40px;
   align-items: flex-end;
   justify-content: space-between;
-  margin-bottom: 46px;
+  margin-bottom: 45px;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    margin-bottom: 21px;
+  }
 
   @media (max-width: ($tablet-width - 1px)) {
     flex-direction: column;
@@ -48,7 +52,11 @@
   @include title-h3;
   @include title-with-shadow;
 
-  margin: 0 0 26px;
+  margin: 23px 0 24px;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    margin: 23px 0 30px;
+  }
 
   @media (max-width: ($tablet-width - 1px)) {
     margin: 0 0 20px;
@@ -57,8 +65,15 @@
 
 .gallery__description {
   @include text-regular;
+  width: 600px;
   margin: 0;
   color: $color-text-primary;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    max-width: 420px;
+
+    @include text-small;
+  }
 }
 
 .gallery__controls {
@@ -72,7 +87,7 @@
 }
 
 .gallery__slider {
-  margin: 0 -120px;
+  margin: 0 -120px 3px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     margin: 0 -45px;
@@ -104,13 +119,13 @@
 }
 
 .gallery__item {
-  min-height: 463px;
+  height: 463px;
   aspect-ratio: 283 / 483;
   overflow: hidden;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     width: auto;
-    min-height: 418px;
+    height: 418px;
     aspect-ratio: 253 / 418;
   }
 
@@ -167,4 +182,14 @@
   object-position: center;
   width: 100%;
   height: 100%;
+}
+
+.education__br {
+  display: none;
+
+  &--tablet {
+    @media (max-width: ($desktop-width - 1px)) {
+      display: inline;
+    }
+  }
 }

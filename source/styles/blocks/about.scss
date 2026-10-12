@@ -1,9 +1,10 @@
 .about {
+  margin-top: 2px;
   padding: 100px 120px;
   overflow: hidden;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    padding: 40px 48px 40px 0;
+    padding: 56px 48px 40px 0;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -43,7 +44,7 @@
   overflow: hidden;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    width: calc(100% + 110px);
+    width: calc(100% + 105px);
     height: 350px;
     margin-right: -65px;
   }
@@ -74,6 +75,11 @@
   width: auto;
   height: 100%;
   margin-left: auto;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    object-position: right calc(50% + 15px);
+    height: 338px;
+  }
 }
 
 .about__title {
@@ -84,6 +90,14 @@
 
   &::before {
     bottom: 18px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin: 0 0 48px;
+
+    &::before {
+      bottom: 1px;
+    }
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -102,6 +116,10 @@
 
   margin: 0 0 16px;
   color: $color-text-primary;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin: 0 0 11px;
+  }
 }
 
 .about__text {
@@ -109,4 +127,8 @@
 
   margin: 0;
   color: $color-text-primary;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    @include text-regular;
+  }
 }

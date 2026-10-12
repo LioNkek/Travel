@@ -2,12 +2,14 @@
   display: flex;
   gap: 30px;
   box-sizing: border-box;
+  min-width: 700px;
   height: 100%;
   padding: 20px;
   background-color: $color-white;
   box-shadow: 0 0 20px rgba($color-dark-blue, 0.1);
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    min-width: 565px;
     box-shadow: 0 0 30px rgba($color-dark-blue, 0.1);
   }
 

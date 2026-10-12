@@ -8,11 +8,24 @@
 }
 
 .main-nav__link {
-  @include button-regular;
+  @include input-text;
   @include menu-item-states;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    @include button-big;
+  }
 }
 
 .main-nav__list--footer {
+  @media (max-width: ($desktop-width - 1px)) {
+    gap: 20px;
+
+    .main-nav__link {
+      @include input-text;
+      margin-right: 5px;
+    }
+  }
+
   @media (max-width: ($tablet-width - 1px)) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

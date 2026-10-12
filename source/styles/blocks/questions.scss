@@ -3,7 +3,6 @@
   display: flex;
   align-items: center;
   min-height: 760px;
-  padding: 40px 0;
   background-color: $color-bg-dark;
   background-image:
     image-set(
@@ -57,14 +56,17 @@
 }
 
 .questions__title {
-  @include title-h2;
-  @include title-with-shadow;
+  @include title-h3;
 
-  margin: 0 0 20px;
+  margin: 3px 0 18px;
   color: $color-white;
 
   &::before {
     color: $color-white;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin: 0 0 25px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -76,8 +78,13 @@
   @include text-regular;
   max-width: 700px;
 
-  margin: 0 auto 40px;
+  margin: 0 auto 38px;
   color: $color-white;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    max-width: 360px;
+    margin: 0 auto 25px;
+  }
 
   @media (max-width: ($tablet-width - 1px)) {
     margin: 0 auto 30px;
@@ -88,13 +95,13 @@
   display: flex;
   gap: 30px;
   justify-content: center;
-  max-width: 980px;
+  max-width: 960px;
   margin: 0 auto;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     flex-direction: column;
-    gap: 20px;
-    max-width: 500px;
+    gap: 11px;
+    max-width: 360px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -105,14 +112,14 @@
 
 .questions__field {
   flex: 1 1 0;
-  min-width: 0;
+  min-width: 360;
 }
 
 .questions__input {
   @include input-text;
 
   width: 100%;
-  padding: 20px 30px;
+  padding: 18px 28px;
   color: rgba($color-text-primary, 0.5);
   background-color: $color-bg-primary;
   border: 1px solid rgba($color-blue, 0.1);
@@ -121,6 +128,8 @@
   transition: border-color 0.2s ease, color 0.2s ease;
 
   &::placeholder {
+    @include input-text;
+
     color: rgba($color-text-primary, 0.5);
     opacity: 100%;
     transition: opacity 0.2s ease;
@@ -148,6 +157,10 @@
       color: rgba($color-gray-disabled, 0.5);
     }
   }
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    padding: 19px 29px;
+  }
 }
 
 .questions__input--error,
@@ -161,11 +174,12 @@
   @include button-regular;
 
   flex-shrink: 0;
-  min-width: 200px;
-  padding: 20px 40px;
+  min-width: 180px;
+  padding: 18px 40px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     width: 100%;
+    padding: 19px 40px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {

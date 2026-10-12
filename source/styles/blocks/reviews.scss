@@ -3,7 +3,7 @@
   overflow: hidden;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    padding: 80px 0;
+    padding: 62px 0;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -32,7 +32,7 @@
   margin-bottom: 28px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    margin-bottom: 35px;
+    margin-bottom: 15px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -52,6 +52,14 @@
 
   &::before {
     bottom: 18px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin-bottom: 10px;
+
+    &::before {
+      bottom: 1px;
+    }
   }
 }
 
@@ -74,14 +82,14 @@
 .reviews__slider {
   height: auto;
   margin-right: -120px;
-  padding: 10px;
+
   padding-right: calc(100% - 700px + 120px);
   overflow: hidden;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     margin-right: -45px;
     margin-left: -10px;
-    padding: 10px;
+
     padding-right: calc(100% - 565px + 45px);
   }
 
@@ -93,6 +101,7 @@
 
 .reviews__slide {
   max-width: 700px;
+  padding: 10px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     max-width: 565px;

@@ -101,7 +101,7 @@
       },
       768: {
         slidesPerView: 3,
-        spaceBetween: 25,
+        spaceBetween: 20,
       },
       1440: {
         slidesPerView: 4,

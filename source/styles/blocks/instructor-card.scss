@@ -34,7 +34,7 @@
   @include title-h7;
   display: block;
   max-width: min-content;
-  margin: 0;
+  margin: 1px 0 0;
   word-break: normal;
   color: $color-text-primary;
 }
@@ -63,6 +63,6 @@
 .instructor-card__description {
   @include text-xsmall;
 
-  margin: 0;
+  margin: -1px 0 0;
   color: $color-text-primary;
 }

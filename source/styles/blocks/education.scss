@@ -2,7 +2,7 @@
   padding: 59px 120px 64px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    padding: 80px 45px;
+    padding: 22px 45px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -12,7 +12,7 @@
 
 .education__container {
   max-width: 1440px;
-  margin: 0 auto;
+  margin: -2px auto;
 }
 
 .education__title {
@@ -20,6 +20,10 @@
   @include title-with-shadow;
 
   margin: 0 0 32px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin: 0 0 34px;
+  }
 
   @media (max-width: ($tablet-width - 1px)) {
     margin: 0 0 15px;
@@ -30,11 +34,11 @@
   @include text-regular;
 
   max-width: 820px;
-  margin: 0 0 56px;
+  margin: 0 0 58px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     max-width: none;
-    margin: 0 0 60px;
+    margin: 0 0 27px;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -47,7 +51,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 21px;
+  margin-bottom: 20px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin-bottom: 30px;
+  }
 
   @media (max-width: ($tablet-width - 1px)) {
     flex-direction: column;
@@ -59,14 +67,22 @@
 .education__subtitle {
   @include title-h3;
 
-  margin: 0 0 -12px;
+  margin: -4px 0 -12px;
   color: $color-text-primary;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin: 0 0 5px;
+  }
 }
 
 .education__subtitle--process {
   @include title-h5;
 
   margin: 58px 0 29px;
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    margin: 27px 0 0;
+  }
 
   @media (max-width: ($tablet-width - 1px)) {
     margin: 60px 0 30px;
@@ -129,7 +145,11 @@
   }
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
-    gap: 25px;
+    display: grid;
+    grid-template-columns: repeat(2, 272px);
+    grid-template-rows: repeat(2, auto);
+    grid-auto-flow: column;
+    justify-content: space-between;
   }
 
   @media (max-width: ($tablet-width - 1px)) {
@@ -148,7 +168,7 @@
 
   &::before {
     position: absolute;
-    bottom: -15px;
+    bottom: -16px;
     left: 20px;
     width: 14px;
     height: 14px;
@@ -158,6 +178,22 @@
 
     @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
       display: none;
+    }
+  }
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    max-width: 272px;
+    margin-top: 102px;
+    margin-bottom: 4px;
+
+    &:nth-child(3) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    &:nth-child(4) {
+      grid-column: 2;
+      grid-row: 1;
     }
   }
 
@@ -219,6 +255,10 @@
   &--mountain {
     mask-image: url("../../icons/mountain.svg");
   }
+
+  @media (max-width: ($desktop-width - 1px)) {
+    margin: 0 10px 0 0;
+  }
 }
 
 .education__process-text {
@@ -226,4 +266,25 @@
 
   margin: -2px 0 0;
   color: $color-text-primary;
+
+  @media (max-width: ($desktop-width - 1px)) {
+    @include text-small;
+    max-width: 225px;
+  }
+}
+
+.education__br {
+  display: none;
+
+  &--desktop {
+    @media (min-width: $desktop-width) {
+      display: inline;
+    }
+  }
+
+  &--tablet {
+    @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+      display: inline;
+    }
+  }
 }
