@@ -31,8 +31,9 @@
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, auto);
     grid-auto-flow: column;
-    gap: 15px 30px;
+    gap: 10px 55px;
     justify-items: center;
+    padding-left: 5px;
     text-align: center;
   }
 }

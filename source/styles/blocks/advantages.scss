@@ -7,7 +7,7 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    padding: 40px 0;
+    padding: 19px 0;
   }
 }
 
@@ -45,7 +45,7 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    margin: 0 0 30px;
+    margin: 0 0 36px;
   }
 }
 
@@ -75,7 +75,7 @@
   @media (max-width: ($tablet-width - 1px)) {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 15px;
   }
 }
 
@@ -129,7 +129,7 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    padding: 30px 20px;
+    padding: 19px 9px;
   }
 }
 
@@ -170,6 +170,12 @@
     height: 48px;
     margin: 0 0 26px;
   }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    width: 42px;
+    height: 42px;
+    margin: 0 0 20px;
+  }
 }
 
 .advantage-card__title {
@@ -182,7 +188,8 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    margin: 0 0 20px;
+    margin: 0 0 15px;
+    padding: 0 15px;
   }
 }
 

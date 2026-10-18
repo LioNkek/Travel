@@ -6,7 +6,7 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    padding: 60px 15px;
+    padding: 19px 15px 0;
   }
 }
 
@@ -26,7 +26,7 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    margin: 0 0 15px;
+    margin: 0 0 33px;
   }
 }
 
@@ -43,7 +43,7 @@
 
   @media (max-width: ($tablet-width - 1px)) {
     max-width: none;
-    margin: 0 0 40px;
+    margin: 0 0 29px;
   }
 }
 
@@ -73,6 +73,10 @@
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     margin: 0 0 5px;
   }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0 0 2px;
+  }
 }
 
 .education__subtitle--process {
@@ -85,7 +89,7 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    margin: 60px 0 30px;
+    margin: 26px 0 24px;
   }
 }
 
@@ -199,7 +203,7 @@
 
   @media (max-width: ($tablet-width - 1px)) {
     max-width: none;
-    padding: 0 0 25px 29px;
+    padding: 0 0 27px 29px;
 
     &::before {
       position: absolute;
@@ -236,10 +240,6 @@
   mask-repeat: no-repeat;
   mask-size: contain;
 
-  @media (max-width: ($tablet-width - 1px)) {
-    margin: 0 9px 0 0;
-  }
-
   &--map {
     mask-image: url("../../icons/map.svg");
   }
@@ -259,6 +259,10 @@
   @media (max-width: ($desktop-width - 1px)) {
     margin: 0 10px 0 0;
   }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    margin: 0 9px 0 0;
+  }
 }
 
 .education__process-text {
@@ -270,6 +274,10 @@
   @media (max-width: ($desktop-width - 1px)) {
     @include text-small;
     max-width: 225px;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    max-width: 200px;
   }
 }
 

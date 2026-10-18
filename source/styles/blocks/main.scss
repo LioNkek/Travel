@@ -5,22 +5,78 @@
 
   &::before {
     position: absolute;
-    top: 674px;
-    left: calc(50% + 118px);
+    top: 0;
+    left: 0;
     z-index: -2;
-    width: 2047px;
-    height: 1630px;
+    width: 100%;
+    height: 100%;
     content: "";
+
     background-image:
+      image-set(
+        url("../../images/clouds/clouds-2@1x.webp") 1x type("image/webp"),
+        url("../../images/clouds/clouds-2@2x.webp") 2x type("image/webp"),
+        url("../../images/clouds/clouds-2@1x.png") 1x type("image/png"),
+        url("../../images/clouds/clouds-2@2x.png") 2x type("image/png")
+      ),
+      image-set(
+        url("../../images/clouds/clouds-2@1x.webp") 1x type("image/webp"),
+        url("../../images/clouds/clouds-2@2x.webp") 2x type("image/webp"),
+        url("../../images/clouds/clouds-2@1x.png") 1x type("image/png"),
+        url("../../images/clouds/clouds-2@2x.png") 2x type("image/png")
+      ),
+      image-set(
+        url("../../images/clouds/clouds-2@1x.webp") 1x type("image/webp"),
+        url("../../images/clouds/clouds-2@2x.webp") 2x type("image/webp"),
+        url("../../images/clouds/clouds-2@1x.png") 1x type("image/png"),
+        url("../../images/clouds/clouds-2@2x.png") 2x type("image/png")
+      ),
       image-set(
         url("../../images/clouds/clouds-1@1x.webp") 1x type("image/webp"),
         url("../../images/clouds/clouds-1@2x.webp") 2x type("image/webp"),
         url("../../images/clouds/clouds-1@1x.png") 1x type("image/png"),
         url("../../images/clouds/clouds-1@2x.png") 2x type("image/png")
       );
+
     background-repeat: no-repeat;
-    background-position: right top;
-    background-size: contain;
+
+    background-position:
+      calc(50vw + 87px) 2230px,
+      calc(50vw - 1032px) 3516px,
+      calc(50vw + 271px) 3700px,
+      calc(50vw + 118px) 674px;
+
+    background-size:
+      840px 280px,
+      1200px 401px,
+      788px 263px,
+      2047px 1630px;
+
     pointer-events: none;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
+    &::before {
+      background-position:
+        calc(50vw - 80px) 2290px,
+        calc(50vw - 831px) 4165px,
+        calc(50vw - 171px) 4668px,
+        calc(50vw - 41px) 942px;
+    }
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    &::before {
+      background-image:
+        image-set(
+          url("../../images/clouds/clouds-1@1x.webp") 1x type("image/webp"),
+          url("../../images/clouds/clouds-1@2x.webp") 2x type("image/webp"),
+          url("../../images/clouds/clouds-1@1x.png") 1x type("image/png"),
+          url("../../images/clouds/clouds-1@2x.png") 2x type("image/png")
+        );
+
+      background-position: calc(50vw + 20px) 581px;
+      background-size: 1167px 782px;
+    }
   }
 }

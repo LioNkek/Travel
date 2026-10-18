@@ -24,6 +24,11 @@
   /* ===== Hero slider ===== */
   const heroSwiper = new Swiper('.hero__slider', {
     loop: true,
+    a11y: {
+      enabled: true,
+      notification: false,
+      slideRole: 'listitem',
+    },
     pagination: {
       el: '.hero__pagination',
       clickable: true,
@@ -63,6 +68,11 @@
     slidesPerGroup: 1,
     spaceBetween: 30,
     loop: false,
+    a11y: {
+      enabled: true,
+      notification: false,
+      slideRole: 'listitem',
+    },
     navigation: {
       prevEl: '.tours__controls .arrow-button--prev',
       nextEl: '.tours__controls .arrow-button--next',
@@ -89,6 +99,11 @@
     slidesPerGroup: 1,
     spaceBetween: 20,
     loop: false,
+    a11y: {
+      enabled: true,
+      notification: false,
+      slideRole: 'listitem',
+    },
     navigation: {
       prevEl: '.education__controls .arrow-button--prev',
       nextEl: '.education__controls .arrow-button--next',
@@ -115,6 +130,11 @@
     slidesPerView: 1,
     spaceBetween: 120,
     slidesPerGroup: 1,
+    a11y: {
+      enabled: true,
+      notification: false,
+      slideRole: 'listitem',
+    },
     navigation: {
       prevEl: '.reviews__controls .arrow-button--prev',
       nextEl: '.reviews__controls .arrow-button--next',
@@ -157,6 +177,11 @@
             loop: true,
             centeredSlides: true,
             initialSlide: 2,
+            a11y: {
+              enabled: true,
+              notification: false,
+              slideRole: 'listitem',
+            },
             navigation: {
               prevEl: '.advantages__controls .arrow-button--prev',
               nextEl: '.advantages__controls .arrow-button--next',
@@ -203,6 +228,11 @@
           slidesPerGroup: 1,
           spaceBetween: 5,
           loop: true,
+          a11y: {
+            enabled: true,
+            notification: false,
+            slideRole: 'listitem',
+          },
           navigation: {
             prevEl: '.gallery__controls .arrow-button--prev',
             nextEl: '.gallery__controls .arrow-button--next',
@@ -319,6 +349,19 @@
       });
     }
   })();
+
+  // Перемещаем все уведомления Swiper в body, чтобы они не ломали валидацию списков
+  [heroSwiper, toursSwiper, educationSwiper, reviewsSwiper].forEach((swiper) => {
+    if (!swiper) {
+      return;
+    }
+    if (swiper.wrapperEl) {
+      swiper.wrapperEl.setAttribute('role', 'list');
+    }
+    swiper.slides.forEach((slide) => {
+      slide.setAttribute('role', 'listitem');
+    });
+  });
 
   // Проверяем, что все слайдеры инициализированы
   if (heroSwiper && toursSwiper && educationSwiper && reviewsSwiper) {

@@ -1,5 +1,5 @@
 .gallery {
-  padding: 100px 0 0;
+  padding: 100px 0 3px;
   overflow: hidden;
 
   @media (max-width: ($desktop-width - 1px)) {
@@ -7,7 +7,7 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    padding: 40px 0;
+    padding: 38px 0 3px;
   }
 }
 
@@ -59,13 +59,13 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    margin: 0 0 20px;
+    margin: 0 0 26px;
   }
 }
 
 .gallery__description {
   @include text-regular;
-  width: 600px;
+  max-width: 600px;
   margin: 0;
   color: $color-text-primary;
 
@@ -73,6 +73,12 @@
     max-width: 420px;
 
     @include text-small;
+  }
+
+  @media (max-width: ($tablet-width - 1px)) {
+    min-width: 250px;
+    max-width: 350px;
+    padding-bottom: 1px;
   }
 }
 
@@ -87,7 +93,7 @@
 }
 
 .gallery__slider {
-  margin: 0 -120px 3px;
+  margin: 0 -120px;
 
   @media (min-width: $tablet-width) and (max-width: ($desktop-width - 1px)) {
     margin: 0 -45px;
@@ -130,7 +136,7 @@
   }
 
   @media (max-width: ($tablet-width - 1px)) {
-    min-height: 266px;
+    height: 266px;
     aspect-ratio: 158 / 266;
   }
 }
@@ -184,7 +190,7 @@
   height: 100%;
 }
 
-.education__br {
+.gallery__br {
   display: none;
 
   &--tablet {
