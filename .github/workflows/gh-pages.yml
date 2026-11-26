@@ -3,7 +3,8 @@ name: Deploy to GitHub-Pages
 on:
   push:
     branches:
-      - master
+      - main
+  workflow_dispatch:
 
 jobs:
   deploy:
@@ -42,5 +43,7 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
+          folder: ./build
+          branch: gh-pages
           folder: ./build
           branch: gh-pages
